@@ -1,0 +1,6 @@
+PERLBREW_ROOT="$HOME/perl5/perlbrew"
+
+if [ -f $PERLBREW_ROOT/etc/bashrc ]; then
+  source $PERLBREW_ROOT/etc/bashrc
+  #PS1='\[\e[0;32m\][pl:${PERLBREW_PERL:-"system"}]\[\e[0m\]$ '
+fi
