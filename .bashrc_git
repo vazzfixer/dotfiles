@@ -1,4 +1,0 @@
-if [ -a $HOME/.git-completion.bash ]; then
-  source $HOME/.git-completion.bash
-  PS1='[\u@\h \W\[\e[0;35m\]$(__git_ps1)\[\e[0m\]]\$ '
-fi

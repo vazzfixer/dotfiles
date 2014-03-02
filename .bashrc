@@ -9,7 +9,6 @@ fi
 export LANG=ja_JP.UTF-8
 TERM=xterm-color
 PS1='[\u@\h \W]\$ '
-PROMPT_COMMAND=
 
 # -------------------------------------------------
 # set alias
@@ -23,6 +22,34 @@ export GREP_COLOR='1;37;41'
 
 # -------------------------------------------------
 # import
-[ -a $HOME/.bashrc_git ] && source $HOME/.bashrc_git
-[ -a $HOME/.bashrc_perlbrew ] && source $HOME/.bashrc_perlbrew
-[ -a $HOME/.bashrc_rbenv ] && source $HOME/.bashrc_perlbrew
+
+# bash_completion
+#if [ -f $HOME/.bash_completion ]; then
+#  source $HOME/.bash_completion
+#fi
+
+# add git repository name in PS1
+if [ -a $HOME/.git-completion.bash ]; then
+  source $HOME/.git-completion.bash
+  PS1='[\u@\h \W\[\e[0;35m\]$(__git_ps1)\[\e[0m\]]\$ '
+fi
+
+# load perlbrew settings
+PERLBREW_ROOT="$HOME/perl5/perlbrew"
+if [ -f $PERLBREW_ROOT/etc/bashrc ]; then
+  source $PERLBREW_ROOT/etc/bashrc
+  #PS1='\[\e[0;32m\][pl:${PERLBREW_PERL:-"system"}]\[\e[0m\]$ '
+fi
+
+# load rbenv settings
+if [ -d $HOME/.rbenv/bin ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
+# -------------------------------------------------
+# OS独自設定
+if [ `uname` = "Darwin" ]; then
+  brew=/usr/local/bin
+  type brew >/dev/null 2>&1 && export PATH=$brew:${PATH//$brew:/}
+fi
