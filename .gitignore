@@ -1,0 +1,6 @@
+*.sw[po]
+tags
+TAGS
+*.log
+.vim/bundle/
+.vim/.netrwhist
