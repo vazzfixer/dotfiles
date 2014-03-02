@@ -95,6 +95,7 @@ NeoBundle 'mattn/unite-advent_calendar'
 NeoBundle 'open-browser.vim'
 NeoBundle 'ctrlp.vim'
 NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'tpope/vim-markdown'
 
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
