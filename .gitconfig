@@ -1,0 +1,54 @@
+[user]
+  email = keitti05@gmail.com
+  name = kegamin
+[color]
+  ui = true
+[core]
+  #pager = lv -cOu8
+  autocrlf = false
+[push]
+  # push only the current branch
+  default = tracking
+[branch]
+  autosetuprebase = always
+[merge]
+  # from 1.7.6
+  ff = false
+[pull]
+  # from 1.7.9
+  rebase = true
+[alias]
+  # http://oli.jp/2012/git-powerup/
+  # http://blog.blindgaenger.net/advanced_git_aliases.html
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+  b = branch -a
+  br = browse-remote
+  c = commit
+  ci = commit
+  co = checkout
+  d = diff
+  dc = diff --cached
+  di = diff
+  dic = diff --cached
+  wh = whatchanged
+  f = fetch --prune
+  ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
+  info = remote show origin
+  l = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
+  ll = log --stat --abbrev-commit
+  ln = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset' --name-status
+  lp = log --oneline -n 20 -p
+  ls = log --stat --abbrev-commit -n 1 # display previous log
+  s = status --short --branch
+  st = status
+  su = submodule update
+  sha = rev-parse HEAD
+  # http://qiita.com/items/10a57a4f1d2806e3a3b8
+  branch-local-clean = !git branch --merged | grep -v '*' | grep -v master | xargs -I % git branch -d % 
+  branch-remote-clean = !git branch -a --merged | grep -v master | grep -v HEAD | grep 'remotes/origin' | sed 's!remotes/origin/!!' | xargs -I % git push origin :%
+  current-branch = rev-parse --abbrev-ref HEAD
+  pull-dry-run  = !"git fetch origin; git diff --stat --summary master..origin/master"
+  fs = fetch --prune stream
+  pullm = pull --rebase stream master
+[credential]
+  helper = cache --timeout=6000

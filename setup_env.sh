@@ -4,7 +4,7 @@
 # -------------------------------------------------
 # symlink dotfiles
 
-DOT_FILES=( .bash_profile .bashrc .inputrc .vimrc .vim )
+DOT_FILES=( .bash_profile .bashrc .inputrc .vimrc .vim .gitconfig )
 BACKUP=$HOME/dotbackup
 DATE=`date +"%Y%m%d%k%M%S"`
 
