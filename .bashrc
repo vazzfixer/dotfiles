@@ -19,6 +19,8 @@ export VISUAL=vim
 TERM=xterm-color
 PS1='[\u@\h \W]\$ '
 OSTYPE=`uname`
+HISTTIMEFORMAT='%Y-%m-%d %T '
+HISTSIZE=10000
 
 # -------------------------------------------------
 # set alias
