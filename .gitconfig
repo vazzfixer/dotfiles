@@ -1,6 +1,8 @@
 [user]
   email = keitti05@gmail.com
   name = kegamin
+[github]
+  user = kegamin
 [color]
   ui = true
 [core]
