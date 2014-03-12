@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# -------------------------------------------------
+# setup info
+# common:
+#   - dotfile symlinks:
+#     - .bash_profile
+#     - .bashrc
+#     - .inputrc
+#     - .vimrc
+#     - .vim/
+#     - .gitconfig
+#   - NeoBundle(vim plugin manager)
+# Linux:
+# MacOS:
+#   - homebrew ( see Brewfile for detail )
+#
 
 # -------------------------------------------------
 # symlink dotfiles
@@ -15,15 +30,16 @@ fi
 
 for file in ${DOT_FILES[@]}
 do
+  [ -L $HOME/$file ] && continue
   if [ -f $HOME/$file ]; then
     mv $HOME/$file $BACKUP/$file.$DATE
     if [ $? -ne 0 ]; then
-      echo "バックアップへの移動失敗 : $HOME/$file"
+      echo "backup error : $HOME/$file"
       continue
     fi
   fi
   ln -s $HOME/dotfiles/$file $HOME/$file
-  echo "シンボリックリンク作成 : $file"
+  echo "make symlink : $HOME/$file"
 done
 
 # -------------------------------------------------
@@ -33,25 +49,22 @@ if [ ! -d ~/.vim/bundle ]; then
 fi
 
 # -------------------------------------------------
-# OS独自setup定義  TODO:インストール系はMakefileに移したい
+#  OS setup   TODO: should change makefile
 
 if [ `uname` = "Darwin" ]; then
-  brew=/usr/local/bin
-  if [ ! -f $brew/brew ]; then
+  brew_dir=/usr/local/bin
+  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+  if [ ! -f $brew_dir/brew ]; then
     echo "install brew"
-    sudo mkdir $brew
+    sudo mkdir $brew_dir
     ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
-    type brew >/dev/null 2>&1 && export PATH=$brew:${PATH//$brew:/}
   fi
+  brew doctor || brew bundle ~/dotfiles/Brewfile
 
-  if [ ! -f $(brew --prefix)/etc/bash_completion ]; then
-    echo "install bash-completion"
-    brew install bash-completion
-  fi
   if [ -f $(brew --prefix)/etc/bash_completion -a ! -f $HOME/.bash_completion ]; then
     file=$(brew --prefix)/etc/bash_completion
     ln -s $file $HOME/.bash_completion
-    echo "シンボリックリンク作成 : .bash_completion"
+    echo "make symlink : .bash_completion"
   fi
 fi
 

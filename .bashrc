@@ -1,7 +1,7 @@
 # -------------------------------------------------
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
+  source /etc/bashrc
 fi
 
 # -------------------------------------------------
@@ -46,11 +46,6 @@ alias vi='vim'
 # -------------------------------------------------
 # import
 
-# bash_completion
-#if [ -f $HOME/.bash_completion ]; then
-#  source $HOME/.bash_completion
-#fi
-
 # add git repository name in PS1
 if [ -a $HOME/.git-completion.bash ]; then
   source $HOME/.git-completion.bash
@@ -79,12 +74,22 @@ function prompt_command {
 PROMPT_COMMAND=prompt_command
 
 # -------------------------------------------------
-# OS独自設定
+# OS
 case "${OSTYPE}}" in
   Darwin*)
+    export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+    export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH # should be fixed.
+    export BYOBU_PREFIX=$(brew --prefix)
+    if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
     brew=/usr/local/bin
     type brew >/dev/null 2>&1 && export PATH=$brew:${PATH//$brew:/}
     ;;
   linux*)
     ;;
 esac
+
+# -------------------------------------------------
+# for work environment
+if [ -f $HOME/.bashrc.work ]; then
+  source $HOME/.bashrc.work
+fi
