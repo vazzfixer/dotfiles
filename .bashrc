@@ -13,7 +13,7 @@ ORANGE=$(tput setaf 3)
 MAGENTA=$(tput setaf 5)
 
 # -------------------------------------------------
-# default env
+# common os environment settings
 export LANG=ja_JP.UTF-8
 export VISUAL=vim
 TERM=xterm-color
@@ -21,6 +21,10 @@ PS1='[\u@\h \W]\$ '
 OSTYPE=`uname`
 HISTTIMEFORMAT='%Y-%m-%d %T '
 HISTSIZE=10000
+
+# -------------------------------------------------
+# application environment
+export GITHUB_URL=https://github.com/
 
 # -------------------------------------------------
 # set alias
@@ -89,7 +93,7 @@ case "${OSTYPE}}" in
 esac
 
 # -------------------------------------------------
-# for work environment
+# for work environment ( override if needed )
 if [ -f $HOME/.bashrc.work ]; then
   source $HOME/.bashrc.work
 fi
