@@ -7,24 +7,32 @@ upgrade
 tap homebrew/binary
 tap phinze/homebrew-cask
 install ack
+install ag
 install autoconf
 install binutils
 install coreutils
 install git
 install gist
+install hub
 install gnu-sed
 install heroku-toolbelt
 install openssl
 install w3m
 install wget
 install tmux
+install wemux
 install bash-completion
 install zsh --disable-etcdir
 install fontforge
 install reattach-to-user-namespace
 install byobu
+install readline
 
-install rbenv ruby-build
+install rbenv
+install ruby-buid
+install heroku-toolbelt
+install nginx
+install mongodb
 
 # macvimを入れる
 tap supermomonga/homebrew-splhack
@@ -50,3 +58,6 @@ install brew-cask
 #cask install bettertouchtool
 #cask install alfred
 #cask alfred link
+#cask install github
+#cask install firefox
+#cask install vagrant
