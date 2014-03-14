@@ -9,8 +9,6 @@ tap phinze/homebrew-cask
 install ack
 install ag
 install autoconf
-install binutils
-install coreutils
 install git
 install gist
 install hub
@@ -29,9 +27,18 @@ install byobu
 install readline
 install ctags
 
+# GNU tools
+install xz
+install binutils
+install coreutils
+install findutils
+
+# ruby
 install rbenv
 install ruby-buid
 install heroku-toolbelt
+
+# platform
 install nginx
 install mongodb
 
