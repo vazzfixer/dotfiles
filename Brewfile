@@ -35,7 +35,7 @@ install findutils
 
 # ruby
 install rbenv
-install ruby-buid
+install ruby-build
 install heroku-toolbelt
 
 # platform
