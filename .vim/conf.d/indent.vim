@@ -2,7 +2,9 @@
 " インデント Indent
 "-------------------------------------------------------------------------------
 set autoindent   " 自動でインデント
-set paste        " ペースト時にautoindentを無効に(onにするとautocomplpop.vimが動かない)
+"set paste       " ペースト時にautoindentを無効に(onにするとautocomplpop.vimが動かない)
+                 " これsetするとneocomplecacheとかで不都合が生じるのでpatetoggleを使う
+set pastetoggle=<C-Q>
 set smartindent  " 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする。
 set cindent      " Cプログラムファイルの自動インデントを始める
 
