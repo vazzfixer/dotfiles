@@ -1,4 +1,6 @@
- NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache'
 
 let g:vimshell_prompt_expr = 'getcwd()." > "'
 let g:vimshell_prompt_pattern = '^\f\+ > '
