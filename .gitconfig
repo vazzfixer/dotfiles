@@ -1,6 +1,9 @@
-[user]
-  email = keitti05@gmail.com
-  name = kegamin
+[include]
+  # 環境ごとに違う設定はここに定義する
+  path = ~/.gitconfig.local
+  #[user]
+  #  email =
+  #  name  =
 [github]
   user = kegamin
 [color]
