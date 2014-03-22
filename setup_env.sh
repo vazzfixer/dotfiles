@@ -43,12 +43,6 @@ do
 done
 
 # -------------------------------------------------
-# install NeoBundle
-if [ ! -d ~/.vim/bundle ]; then
-  mkdir -p ~/.vim/bundle && git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim && vim -c ':NeoBundleInstall'
-fi
-
-# -------------------------------------------------
 #  OS setup   TODO: should change makefile
 
 if [ `uname` = "Darwin" ]; then
@@ -68,3 +62,8 @@ if [ `uname` = "Darwin" ]; then
   fi
 fi
 
+# -------------------------------------------------
+# install NeoBundle
+if [ ! -d ~/.vim/bundle ]; then
+  mkdir -p ~/.vim/bundle && git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim && vim -c ':NeoBundleInstall'
+fi
