@@ -28,3 +28,5 @@ let g:NERDTreeShowHidden=1
 "NERDTreeを+|`などを使ってツリー表示をする。
 let g:NERDTreeDirArrows=0
 
+map  <C-l> :tabn<CR> " move to next tab
+map  <C-h> :tabp<CR> " move to the previous tab
