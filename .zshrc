@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/dotfiles/oh-my-zsh
+ZSH=$HOME/dotfiles/zsh/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -48,6 +48,7 @@ ZSH_THEME="wedisagree"
 plugins=(git osx rails perlbrew ruby bundler brew emoji-clock)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/dotfiles/zsh/zaw/zaw.zsh
 
 # User configuration
 
