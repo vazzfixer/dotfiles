@@ -26,6 +26,7 @@ install reattach-to-user-namespace
 install byobu
 install readline
 install ctags
+install node
 
 # GNU tools
 install xz
