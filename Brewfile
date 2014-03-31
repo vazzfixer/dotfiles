@@ -58,6 +58,7 @@ install --powerline --vim-powerline ricty
 # 以下mac用アプリを入れる
 install brew-cask
 cask install bettertouchtool
+cask install sourcetree
 #cask install dropbox
 #cask install google-chrome
 #cask install skype
