@@ -3,24 +3,31 @@
 ## vim関連
 
 ### previm
- * F7  
-   markdownをプレビュー
+
+* F7  
+  markdownをプレビュー
 
 ### color
- * color設定をpreviewする
-   :Unite colorscheme -auto-preview
+
+* color設定をpreviewする  
+  :Unite colorscheme -auto-preview
 
 ### NERDTree
- * Ctrl-h : move to left tab
- * Ctrl-l : move to right tab
+
+* Ctrl-h : move to left tab
+* Ctrl-l : move to right tab
 
 ### vim TAB(tab.vim)
-  * tc : tab生成
-  * tx : tab削除
-  * tn : tab next
-  * tp : tab previous
-  * t[1-9] : tab番号に移動
+
+* tc : tab生成
+* tx : tab削除
+* tn : tab next
+* tp : tab previous
+* t[1-9] : tab番号に移動
 
 ## zsh
- * zaw
-   Ctrl-X : zash history
+
+* zaw  
+  Ctrl-X : zash history
+* コマンドラインスタック  
+  Ctrl-Q
