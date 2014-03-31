@@ -57,22 +57,20 @@ install --powerline --vim-powerline ricty
 
 # 以下mac用アプリを入れる
 install brew-cask
+cask install google-chrome
 cask install bettertouchtool
 cask install sourcetree
 cask install dash
-#cask install dropbox
-#cask install google-chrome
-#cask install skype
+cask install alfred link
+cask install kobito
+cask install skype
+cask install dropbox
+cask install iterm2
 #cask install vagrant
 #cask install virtualbox
-#cask install iterm2
-#cask install kobito
-#cask install bettertouchtool
 #cask install alfred
-#cask alfred link
 #cask install github
 #cask install firefox
-#cask install vagrant
 
 # remove outdated versions
 cleanup
