@@ -59,6 +59,7 @@ install --powerline --vim-powerline ricty
 install brew-cask
 cask install bettertouchtool
 cask install sourcetree
+cask install dash
 #cask install dropbox
 #cask install google-chrome
 #cask install skype
@@ -72,3 +73,6 @@ cask install sourcetree
 #cask install github
 #cask install firefox
 #cask install vagrant
+
+# remove outdated versions
+cleanup
