@@ -6,6 +6,10 @@
  * F7  
    markdownをプレビュー
 
+### color
+ * color設定をpreviewする
+   :Unite colorscheme -auto-preview
+
 ### NERDTree
  * Ctrl-h : move to left tab
  * Ctrl-l : move to right tab
