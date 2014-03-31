@@ -27,3 +27,12 @@ setopt hist_reduce_blanks                   # スペース排除
 setopt inc_append_history                   # 履歴をインクリメンタルに追加
 setopt ignore_eof                           # Ctrl+D では終了しないようになる（exit, logout などを使う）
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'   # 単語の区切り指定
+
+source $HOME/dotfiles/zsh/my-plugin/z.sh
+source $HOME/dotfiles/zsh/my-plugin/auto-fu.zsh
+
+_Z_CMD=j
+precmd() {
+      _z --add "$(pwd -P)"
+}
+

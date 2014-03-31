@@ -86,6 +86,3 @@ else
     fi
   fi
 fi
-
-# zsh plugins
-source $HOME/dotfiles/zsh/auto-fu/auto-fu.zsh
