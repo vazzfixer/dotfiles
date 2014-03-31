@@ -27,6 +27,7 @@ install byobu
 install readline
 install ctags
 install node
+install z
 
 # GNU tools
 install xz
