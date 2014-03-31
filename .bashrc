@@ -38,7 +38,7 @@ case "${OSTYPE}" in
     alias ll='ls -lG'
     alias la='ls -laG'
     ;;
-  linux*)
+  Linux*)
     alias ls='ls --color=auto'
     alias ll='ls -l --color=auto'
     alias la='ls -al --color=auto'
