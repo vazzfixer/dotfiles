@@ -31,3 +31,8 @@
   Ctrl-X : zash history
 * コマンドラインスタック  
   Ctrl-Q
+
+## tmux
+  * Ctrl-h : デフォルトキーバインド(ctrl-bが嫌だったの
+  * r : .tmux.conf reload
+  * Ctrl-tab or M-tab : window移動
