@@ -67,3 +67,5 @@ export PATH="/usr/local/bin:$HOME/.rbenv/shims:$HOME/perl5/perlbrew/bin:/usr/bin
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+TERM=xterm-256color
