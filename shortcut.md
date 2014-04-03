@@ -39,3 +39,4 @@
   * Ctrl-m(M) : mouseモードのON/OFF
   * Ctrl-e(E) : synchronize-paneのON/FF
   * Shift+矢印 : pane移動
+  * 矢印 : pane サイズ変更(連打可能
