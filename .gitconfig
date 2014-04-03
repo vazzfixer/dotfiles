@@ -11,6 +11,7 @@
 [core]
   #pager = lv -cOu8
   autocrlf = false
+  editor = /usr/bin/vim
 [push]
   # push only the current branch
   default = tracking
