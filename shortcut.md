@@ -33,6 +33,9 @@
   Ctrl-Q
 
 ## tmux
-  * Ctrl-h : デフォルトキーバインド(ctrl-bが嫌だったの
+  * Ctrl-h : デフォルトキーバインド(ctrl-bが嫌だったので
   * r : .tmux.conf reload
   * Ctrl-tab or M-tab : window移動
+  * Ctrl-m(M) : mouseモードのON/OFF
+  * Ctrl-e(E) : synchronize-paneのON/FF
+  * Shift+矢印 : pane移動
