@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$HOME/dotfiles/bin:/usr/local/bin:$HOME/.rbenv/shims:$HOME/perl5/perlbrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/dotfiles/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/perl5/perlbrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
