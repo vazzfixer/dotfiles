@@ -11,5 +11,5 @@ set smartcase
 "行末まで検索したら行頭に戻る
 set wrapscan
  
-" 検索時はハイライトoff
-set nohlsearch
+" ハイライトon
+set hlsearch
