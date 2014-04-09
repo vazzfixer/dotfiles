@@ -27,8 +27,15 @@
 
 ## zsh
 
-* zaw  
-  Ctrl-X : zash history
+* zaw
+  prefix -> Ctrl-X
+  Ctrl-X : zaw-cdr
+  Ctrl-R : zaw-history
+  Ctrl-F : zaw-git-files
+  Ctrl-D : zaw-gitdir
+  Ctrl-B : zaw-git-branches
+  Ctrl-P : zaw-process
+  Ctrl-H : zaw-tmux
 * コマンドラインスタック  
   Ctrl-Q
 
