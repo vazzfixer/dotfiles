@@ -23,6 +23,8 @@
 [pull]
   # from 1.7.9
   rebase = true
+[init]
+  templatedir = ~/dotfiles/git_hook
 [alias]
   # http://oli.jp/2012/git-powerup/
   # http://blog.blindgaenger.net/advanced_git_aliases.html
