@@ -67,11 +67,11 @@ cask install kobito
 cask install skype
 cask install dropbox
 cask install iterm2
-#cask install vagrant
-#cask install virtualbox
-#cask install alfred
-#cask install github
-#cask install firefox
+cask install vagrant
+cask install virtualbox
+cask install alfred
+cask install github
+cask install firefox
 
 # remove outdated versions
 cleanup
