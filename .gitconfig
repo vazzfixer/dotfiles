@@ -51,6 +51,7 @@
   st = status
   su = submodule update
   sha = rev-parse HEAD
+  grep = grep --line-number --show-function --color --heading --break
   # http://qiita.com/items/10a57a4f1d2806e3a3b8
   branch-local-clean = !git branch --merged | grep -v '*' | grep -v master | xargs -I % git branch -d % 
   branch-remote-clean = !git branch -a --merged | grep -v master | grep -v HEAD | grep 'remotes/origin' | sed 's!remotes/origin/!!' | xargs -I % git push origin :%
@@ -61,5 +62,5 @@
 [credential]
   helper = cache --timeout=6000
 [filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
