@@ -4,3 +4,4 @@ TAGS
 *.log
 .vim/bundle/
 .vim/.netrwhist
+.ruby-version
