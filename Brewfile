@@ -28,6 +28,7 @@ install readline
 install ctags
 install node
 install z
+install htop
 
 # GNU tools
 install xz
