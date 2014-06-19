@@ -60,7 +60,7 @@
   fs = fetch --prune stream
   pullm = pull --rebase stream master
 [credential]
-  helper = cache --timeout=6000
+  helper = cache --timeout=216000
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
