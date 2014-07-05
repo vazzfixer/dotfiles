@@ -29,6 +29,7 @@ install ctags
 install node
 install z
 install htop
+install unrar
 
 # GNU tools
 install xz
