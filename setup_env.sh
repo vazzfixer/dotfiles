@@ -55,7 +55,10 @@ if [ `uname` = "Darwin" ]; then
     sudo mkdir $brew_dir
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
-  brew doctor || brew bundle ~/dotfiles/Brewfile
+  if [ -d /usr/local/Libraly ]; then
+    cd /usr/local/Library && git stash && git clean -d -f
+  fi
+  brew doctor || ./bin/brew.sh
 
   if [ -f $(brew --prefix)/etc/bash_completion -a ! -f $HOME/.bash_completion ]; then
     file=$(brew --prefix)/etc/bash_completion
