@@ -53,7 +53,7 @@ if [ `uname` = "Darwin" ]; then
   if [ ! -f $brew_dir/brew ]; then
     echo "install brew"
     sudo mkdir $brew_dir
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
   brew doctor || brew bundle ~/dotfiles/Brewfile
 
