@@ -50,6 +50,7 @@ alias vi='vim'
 
 # -------------------------------------------------
 # import
+export PATH="$PATH:/usr/local/sbin"
 
 # add git repository name in PS1
 if [ -a $HOME/.git-completion.bash ]; then
@@ -70,13 +71,13 @@ fi
 
 # -------------------------------------------------
 # prompt
-function prompt_command {
-  PS1='[\u@\h \W\[\e[0;35m\]$(__git_ps1)\[\e[0m\]]\$ '
-  #PS1="\[$RESET\]\[$DARK_GRAY\]\u in \[$GREEN\]\w$(__git_ps1) \[$DARK_GRAY\]$\[$RESET\] "
-  #PS1='\[\e[0;32m\][pl:${PERLBREW_PERL:-"system"}]\[\e[0m\]$ '
-}
+#function prompt_command {
+#  PS1='[\u@\h \W\[\e[0;35m\]$(__git_ps1)\[\e[0m\]]\$ '
+#  #PS1="\[$RESET\]\[$DARK_GRAY\]\u in \[$GREEN\]\w$(__git_ps1) \[$DARK_GRAY\]$\[$RESET\] "
+#  #PS1='\[\e[0;32m\][pl:${PERLBREW_PERL:-"system"}]\[\e[0m\]$ '
+#}
 
-PROMPT_COMMAND=prompt_command
+#PROMPT_COMMAND=prompt_command
 
 # -------------------------------------------------
 # OS
