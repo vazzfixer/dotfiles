@@ -75,6 +75,8 @@ brew cask install virtualbox
 brew cask install alfred
 brew cask install github
 brew cask install firefox
+brew cask install insomniax
+brew cask install atom
 
 # remove outdated versions
 brew cleanup
