@@ -5,3 +5,5 @@ TAGS
 .vim/bundle/
 .vim/.netrwhist
 .ruby-version
+.DS_Store
+*~
