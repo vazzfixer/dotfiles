@@ -27,7 +27,6 @@ brew install fontforge
 brew install reattach-to-user-namespace
 brew install byobu
 brew install readline
-# brew install ctags
 brew install node
 brew install z
 brew install htop
@@ -60,6 +59,10 @@ brew link ctags-objc-ja
 brew install macvim-kaoriya --HEAD --with-lua　--with-cscope
 brew linkapps
 
+# llvm
+brew install llvm --with-clang --HEAD
+brew install clang-format
+ 
 # powerline用フォントを作成する
 brew tap sanemat/font
 brew install Caskroom/cask/xquartz
