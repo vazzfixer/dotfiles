@@ -9,7 +9,7 @@ let g:gitgutter_sign_removed = '✘'
 
 " lightline.vim
 let g:lightline = {
-        \ 'colorscheme': 'solarized-dark',
+        \ 'colorscheme': 'landscape',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [
