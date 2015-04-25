@@ -52,7 +52,14 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$HOME/dotfiles/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/perl5/perlbrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH:$HOME/dotfiles/bin"
+export PATH="$PATH:/usr/local/bin"
+export PATH="$PATH:$HOME/.rbenv/bin"
+export PATH="$PATH:$HOME/.rbenv/shims"
+export PATH="$PATH:$HOME/perl5/perlbrew/bin"
+export PATH="$PATH:/usr/bin:/bin"
+export PATH="$PATH:/usr/sbin"
+export PATH="$PATH:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -69,3 +76,19 @@ export PATH="$HOME/dotfiles/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.rbenv/shi
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 TERM=xterm-256color
+
+# tmux start
+
+if [ -z "$TMUX" -a -z "$STY" ]; then
+    if type tmuxx >/dev/null 2>&1; then
+        tmuxx
+    elif type tmux >/dev/null 2>&1; then
+        if tmux has-session && tmux list-sessions | /usr/bin/grep -qE '.*]$'; then
+            tmux attach && echo "tmux attached session "
+        else
+            tmux new-session && echo "tmux created new session"
+        fi
+    elif type screen >/dev/null 2>&1; then
+        screen -rx || screen -D -RR
+    fi
+fi
