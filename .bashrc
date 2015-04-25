@@ -51,6 +51,7 @@ alias vi='vim'
 # -------------------------------------------------
 # import
 export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:$HOME/dotfiles/bin"
 
 # add git repository name in PS1
 if [ -a $HOME/.git-completion.bash ]; then
