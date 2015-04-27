@@ -33,6 +33,16 @@ brew install htop
 brew install unrar
 brew install pkg-config
 
+# vimの最新版(clipboard対応)
+brew install vim
+if [ -f `ls -1 /usr/local/Cellar/vim/*/bin/vim` ]; then
+  echo "installing latest vim ..."
+  if [ ! -f /usr/bin/vim_old ]; then
+    sudo mv /usr/bin/vim /usr/bin/vim_old
+  fi
+  sudo ln -s `ls -1 /usr/local/Cellar/vim/*/bin/vim` /usr/bin
+fi
+
 # GNU tools
 brew install xz
 brew install binutils
