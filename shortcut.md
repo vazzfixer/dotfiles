@@ -47,3 +47,16 @@
   * Ctrl-e(E) : synchronize-paneのON/FF
   * Shift+矢印 : pane移動
   * 矢印 : pane サイズ変更(連打可能
+
+## その他ショートカット等
+
+### markdownのPDF/html可
+
+* pandoc_html
+```
+$ pandoc_markdown hoge.markdown -o hoge.html
+```
+* pandoc_pdf
+```
+$ pandoc_pdf hoge.markdown -o hoge.pdf
+```

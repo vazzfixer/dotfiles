@@ -52,6 +52,8 @@ alias vi='vim'
 # import
 export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:$HOME/dotfiles/bin"
+export PATH="$PATH:$HOME/.cabal/bin"        # for haskel cabal package manager
+export PATH="$PATH:/usr/texbin"             # for TeX
 
 # add git repository name in PS1
 if [ -a $HOME/.git-completion.bash ]; then

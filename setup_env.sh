@@ -13,6 +13,7 @@
 #     - .gitignore
 #     - .zshrc
 #     - .tmux.conf
+#     - .pandoc/
 #   - NeoBundle(vim plugin manager)
 # Linux:
 # MacOS:
@@ -22,7 +23,7 @@
 # -------------------------------------------------
 # symlink dotfiles
 
-DOT_FILES=( .bash_profile .bashrc .inputrc .vimrc .vim .gitconfig .zshrc .tmux.conf .gitignore)
+DOT_FILES=( .bash_profile .bashrc .inputrc .vimrc .vim .gitconfig .zshrc .tmux.conf .gitignore .pandoc)
 BACKUP=$HOME/dotbackup
 DATE=`date +"%Y%m%d%k%M%S"`
 

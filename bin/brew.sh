@@ -1,7 +1,7 @@
 #!/bin/sh
 # homebrew update & upgrade formula
 brew update
-brew upgrade
+brew upgrade --all
 
 # install packages
 
@@ -32,6 +32,17 @@ brew install z
 brew install htop
 brew install unrar
 brew install pkg-config
+
+# HomebrewではなくHaskelのパッケージ管理cabal
+# pandocを利用して、markdownをPDF/html化するための準備
+brew install ghc cabal-install
+cabal update
+cabal install cabal-install
+cabal install pandoc
+brew cask install basictex
+sudo tlmgr update --self
+sudo tlmgr update --all
+sudo tlmgr install collection-langjapanese collection-latexrecommended collection-fontsrecommended
 
 # vimの最新版(clipboard対応)
 brew install vim
