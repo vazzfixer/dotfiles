@@ -10,6 +10,7 @@ set shiftwidth=2
 set softtabstop=2
 set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%   " 見えない文字を可視化
+set clipboard+=unnamed
 syntax on
 filetype off
 
