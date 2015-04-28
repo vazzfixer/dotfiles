@@ -33,27 +33,6 @@ brew install htop
 brew install unrar
 brew install pkg-config
 
-# HomebrewではなくHaskelのパッケージ管理cabal
-# pandocを利用して、markdownをPDF/html化するための準備
-brew install ghc cabal-install
-cabal update
-cabal install cabal-install
-cabal install pandoc
-brew cask install basictex
-sudo tlmgr update --self
-sudo tlmgr update --all
-sudo tlmgr install collection-langjapanese collection-latexrecommended collection-fontsrecommended
-
-# vimの最新版(clipboard対応)
-brew install vim
-if [ -f `ls -1 /usr/local/Cellar/vim/*/bin/vim` ]; then
-  echo "installing latest vim ..."
-  if [ ! -f /usr/bin/vim_old ]; then
-    sudo mv /usr/bin/vim /usr/bin/vim_old
-  fi
-  sudo ln -s `ls -1 /usr/local/Cellar/vim/*/bin/vim` /usr/bin
-fi
-
 # GNU tools
 brew install xz
 brew install binutils
@@ -77,7 +56,7 @@ brew install --HEAD cmigemo-mk
 brew install --HEAD ctags-objc-ja
 brew install gettext-mk
 brew link ctags-objc-ja
-brew install macvim-kaoriya --HEAD --with-lua　--with-cscope
+#brew install macvim-kaoriya --HEAD --with-lua　--with-cscope
 brew linkapps
 
 # llvm
@@ -110,11 +89,36 @@ brew cask install atom
 # remove outdated versions
 brew cleanup
 
+############################################################
+
 # installing ricty fonts
-if [ -d /usr/local/Celler/ricty/3.2.3/share/fonts ]; then
+ricty_ver=`ls -1 /usr/local/Cellar/ricty/`;
+if [ -d /usr/local/Cellar/ricty/${ricty_ver}/share/fonts ]; then
   # rictyフォントをコピーして,フォントキャッシュをクリアする
-  cp -f /usr/local/Cellar/ricty/3.2.3/share/fonts/Ricty*.ttf ~/Library/Fonts/ && fc-cache -vf
+  cp -f /usr/local/Cellar/ricty/${ricty_ver}/share/fonts/Ricty*.ttf ~/Library/Fonts/ && fc-cache -vf
   defaults -currentHost write -globalDomain AppleFontSmoothing -int 2
 else
     echo "rictyのフォントが未インストール."
 fi
+
+# vimの最新版(clipboard対応)
+brew install vim
+new_vim=`ls -1 /usr/local/Cellar/vim/*/bin/vim`;
+if [ -f ${new_vim} ]; then
+  echo "installing latest vim ..."
+  if [ ! -f /usr/bin/vim_old ]; then
+    sudo mv /usr/bin/vim /usr/bin/vim_old
+  fi
+  sudo ln -s `ls -1 /usr/local/Cellar/vim/*/bin/vim` /usr/bin 2> /dev/null
+fi
+
+# HomebrewではなくHaskelのパッケージ管理cabal
+# pandocを利用して、markdownをPDF/html化するための準備
+brew install ghc cabal-install
+cabal update
+cabal install cabal-install
+cabal install pandoc
+brew cask install basictex
+sudo tlmgr update --self
+sudo tlmgr update --all
+sudo tlmgr install collection-langjapanese collection-latexrecommended collection-fontsrecommended
