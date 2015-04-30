@@ -48,7 +48,7 @@ brew install heroku-toolbelt
 brew install nginx
 brew install mongodb
 
-# macvimを入れる
+# macvim
 brew tap supermomonga/homebrew-splhack
 brew install cscope
 brew install lua
@@ -62,7 +62,7 @@ brew linkapps
 # llvm
 brew install llvm --with-clang --HEAD
 brew install clang-format
- 
+
 # powerline用フォントを作成する
 brew tap sanemat/font
 brew install Caskroom/cask/xquartz
@@ -85,9 +85,6 @@ brew cask install github
 brew cask install firefox
 brew cask install insomniax
 brew cask install atom
-
-# remove outdated versions
-brew cleanup
 
 ############################################################
 
@@ -122,3 +119,11 @@ brew cask install basictex
 sudo tlmgr update --self
 sudo tlmgr update --all
 sudo tlmgr install collection-langjapanese collection-latexrecommended collection-fontsrecommended
+
+# mactex
+brew install ghostscript
+brew install imagemagick
+brew cask install mactex
+
+# remove outdated versions
+brew cleanup
