@@ -4,6 +4,25 @@ if [ -f /etc/bashrc ]; then
   source /etc/bashrc
 fi
 
+# OS environments
+case "${OSTYPE}}" in
+  Darwin*)
+    if [ -f $HOME/dotfiles/.bashrc_mac ]; then
+      source $HOME/dotfiles/.bashrc_mac
+    fi
+    ;;
+  linux*)
+    if [ -f $HOME/dotfiles/.bashrc_linux ]; then
+      source $HOME/dotfiles/.bashrc_linux
+    fi
+    ;;
+esac
+
+# for work environment ( override if needed )
+if [ -f $HOME/.bashrc.work ]; then
+  source $HOME/.bashrc.work
+fi
+
 # -------------------------------------------------
 # prompt color set
 RESET=$(tput sgr0)
@@ -33,27 +52,12 @@ export LS_COLORS='no=01;37:fi=00:di=01;36:ln=01;32:pi=40;33:so=01;35:bd=40;33;01
 alias grep='grep -E --color=auto'
 export GREP_COLOR='1;37;41'
 
-case "${OSTYPE}" in
-  Darwin*)
-    alias ls='ls -G'
-    alias ll='ls -lG'
-    alias la='ls -laG'
-    ;;
-  Linux*)
-    alias ls='ls --color=auto'
-    alias ll='ls -l --color=auto'
-    alias la='ls -al --color=auto'
-    ;;
-esac
-
 alias vi='vim'
 
 # -------------------------------------------------
 # import
 export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:$HOME/dotfiles/bin"
-export PATH="$PATH:$HOME/.cabal/bin"        # for haskel cabal package manager
-export PATH="$PATH:/usr/texbin"             # for TeX
 
 # add git repository name in PS1
 if [ -a $HOME/.git-completion.bash ]; then
@@ -83,25 +87,7 @@ fi
 #PROMPT_COMMAND=prompt_command
 
 # -------------------------------------------------
-# OS
-case "${OSTYPE}}" in
-  Darwin*)
-    export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-    export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH # should be fixed.
-    export BYOBU_PREFIX=$(brew --prefix)
-    if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-    brew=/usr/local/bin
-    type brew >/dev/null 2>&1 && export PATH=$brew:${PATH//$brew:/}
-    ;;
-  linux*)
-    ;;
-esac
-
-# -------------------------------------------------
-# for work environment ( override if needed )
-if [ -f $HOME/.bashrc.work ]; then
-  source $HOME/.bashrc.work
-fi
+# etc
 
 # tmux start
 if [ -z "$TMUX" -a -z "$STY" ]; then
