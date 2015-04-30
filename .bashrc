@@ -4,25 +4,6 @@ if [ -f /etc/bashrc ]; then
   source /etc/bashrc
 fi
 
-# OS environments
-case "${OSTYPE}}" in
-  Darwin*)
-    if [ -f $HOME/dotfiles/.bashrc_mac ]; then
-      source $HOME/dotfiles/.bashrc_mac
-    fi
-    ;;
-  linux*)
-    if [ -f $HOME/dotfiles/.bashrc_linux ]; then
-      source $HOME/dotfiles/.bashrc_linux
-    fi
-    ;;
-esac
-
-# for work environment ( override if needed )
-if [ -f $HOME/.bashrc.work ]; then
-  source $HOME/.bashrc.work
-fi
-
 # -------------------------------------------------
 # prompt color set
 RESET=$(tput sgr0)
@@ -33,8 +14,6 @@ MAGENTA=$(tput setaf 5)
 
 # -------------------------------------------------
 # common os environment settings
-export LANG=ja_JP.UTF-8
-export VISUAL=vim
 TERM=xterm-color
 PS1='[\u@\h \W]\$ '
 OSTYPE=`uname`
@@ -43,21 +22,12 @@ HISTSIZE=10000
 TERM=xterm-256color
 
 # -------------------------------------------------
-# application environment
-export GITHUB_URL=https://github.com/
-
-# -------------------------------------------------
 # set alias
-export LS_COLORS='no=01;37:fi=00:di=01;36:ln=01;32:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=40;32;01:ex=01;33:*core=01;31:'
 alias grep='grep -E --color=auto'
-export GREP_COLOR='1;37;41'
-
 alias vi='vim'
 
 # -------------------------------------------------
 # import
-export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$HOME/dotfiles/bin"
 
 # add git repository name in PS1
 if [ -a $HOME/.git-completion.bash ]; then
@@ -103,4 +73,34 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
         screen -rx || screen -D -RR
     fi
 fi
+
+# OS environments
+case "${OSTYPE}}" in
+  Darwin*)
+    if [ -f $HOME/dotfiles/.bashrc_mac ]; then
+      source $HOME/dotfiles/.bashrc_mac
+    fi
+    ;;
+  linux*)
+    if [ -f $HOME/dotfiles/.bashrc_linux ]; then
+      source $HOME/dotfiles/.bashrc_linux
+    fi
+    ;;
+esac
+
+# for work environment ( override if needed )
+if [ -f $HOME/.bashrc.work ]; then
+  source $HOME/.bashrc.work
+fi
+
+# -------------------------------------------------
+# shell関数
+
+pandoc_html () {
+  pandoc -s --self-contained -t html5 -c ~/.pandoc/github.css $@
+}
+
+pandoc_pdf () {
+  pandoc -V documentclass=ltjarticle --latex-engine=lualatex $@
+}
 
