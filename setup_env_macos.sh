@@ -3,11 +3,10 @@
 # -------------------------------------------------
 # setup info
 #   - homebrew ( see Brewfile for detail )
-#   - bash_completion
 #   - locate
 
 # -------------------------------------------------
-# homebrew
+# install homebrew
 brew_dir=/usr/local/bin
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 if [ ! -f $brew_dir/brew ]; then
@@ -18,15 +17,8 @@ fi
 if [ -d /usr/local/Libraly ]; then
   cd /usr/local/Library && git stash && git clean -d -f
 fi
-brew doctor || ./bin/brew.sh
 
-# -------------------------------------------------
-# bash_completion
-if [ -f $(brew --prefix)/etc/bash_completion -a ! -f $HOME/.bash_completion ]; then
-  file=$(brew --prefix)/etc/bash_completion
-  ln -s $file $HOME/.bash_completion
-  echo "make symlink : .bash_completion"
-fi
+$HOME/dotfiles/homebrew/install.sh
 
 # -------------------------------------------------
 # mac locate command
