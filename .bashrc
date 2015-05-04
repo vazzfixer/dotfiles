@@ -88,6 +88,11 @@ case "${OSTYPE}}" in
     ;;
 esac
 
+# Docker
+if [ "`boot2docker status`" = "running" ]; then
+    eval $(boot2docker shellinit 2>/dev/null)
+fi
+
 # for work environment ( override if needed )
 if [ -f $HOME/.bashrc.work ]; then
   source $HOME/.bashrc.work
