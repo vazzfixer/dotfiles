@@ -1,4 +1,4 @@
-#!/bin/sh
+#!bin/sh
 
 brew tap homebrew/binary
 brew install docker boot2docker
