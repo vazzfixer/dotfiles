@@ -43,8 +43,11 @@ do
 done
 
 # -------------------------------------------------
-# copy bin to /usr/local/bin
-cp $HOME/dotfiles/bin/* /usr/local/bin
+# copy dotfiles/bin to /usr/local/bin
+
+# for tmux
+cp $HOME/dotfiles/bin/battery /usr/local/bin
+cp $HOME/dotfiles/bin/used_mem /usr/local/bin
 
 # -------------------------------------------------
 # install NeoBundle
