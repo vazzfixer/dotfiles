@@ -37,11 +37,6 @@ brew install binutils
 brew install coreutils
 brew install findutils
 
-# ruby
-brew install rbenv
-brew install ruby-build
-brew install heroku-toolbelt
-
 # llvm
 brew install llvm --with-clang --HEAD
 brew install clang-format
@@ -57,7 +52,6 @@ brew cask install kobito
 brew cask install skype
 brew cask install dropbox
 brew cask install iterm2
-brew cask install vagrant
 brew cask install virtualbox
 brew cask install github
 brew cask install firefox
