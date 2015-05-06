@@ -43,6 +43,10 @@ do
 done
 
 # -------------------------------------------------
+# copy bin to /usr/local/bin
+cp $HOME/dotfiles/bin/* /usr/local/bin
+
+# -------------------------------------------------
 # install NeoBundle
 if [ ! -d ~/.vim/bundle ]; then
   mkdir -p ~/.vim/bundle && git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim && vim -c ':NeoBundleInstall'
