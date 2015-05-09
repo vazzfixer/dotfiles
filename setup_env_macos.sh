@@ -18,7 +18,7 @@ if [ -d /usr/local/Libraly ]; then
   cd /usr/local/Library && git stash && git clean -d -f
 fi
 
-$HOME/dotfiles/homebrew/install.sh
+$HOME/dotfiles/install/install_all.sh
 
 # -------------------------------------------------
 # mac locate command
