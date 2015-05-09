@@ -99,13 +99,28 @@ if [ -f $HOME/.bashrc.work ]; then
 fi
 
 # -------------------------------------------------
-# shell関数
+# shell functions.
 
+# githubのcssを利用したhtmlを作成する
 pandoc_html () {
   pandoc -s --self-contained -t html5 -c ~/.pandoc/github.css $@
 }
 
+# 日本語を含んだファイルをpdf化
 pandoc_pdf () {
-  pandoc -V documentclass=ltjarticle --latex-engine=lualatex $@
+  pandoc -V documentclass=ltjarticle \
+      --latex-engine=lualatex \
+      $@
 }
 
+# 日本語を含んだファイルをpdf化(original版)
+# marginとか色々いじってる
+pandoc_note () {
+  pandoc -V documentclass=ltjarticle \
+      --latex-engine=lualatex \
+      --listing \
+      --number-sections \
+      --variable=geometry:a4paper,margin=2cm \
+      -H $HOME/dotfiles/tex/template/header.tex \
+      $@
+}
