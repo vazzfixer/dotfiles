@@ -10,14 +10,15 @@ if ! grep "zsh" /etc/shells > /dev/null 2>&1 ; then
     echo $zsh_path | sudo tee -a /etc/shells
 fi
 
+#zshをデフォルトのshellに
 chsh -s $zsh_path
 
-# .zshk系統をどっかで対比
+# preztoの最新版を$HOME/.zpreztoに置く
 antigen bundle sorin-ionescu/prezto
 ln -s ~/.antigen/repos/.zprezto ~/.zprezto
 
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  #.zshrcはdotfiles/.zshrcを使う
+  #.zshrcはdotfiles/.zshrcを使うのでエラー無視
 done
