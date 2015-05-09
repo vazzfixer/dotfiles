@@ -21,7 +21,6 @@ brew install wget
 brew install tmux
 brew install wemux
 brew install bash-completion
-brew install zsh --disable-etcdir
 brew install fontforge
 brew install reattach-to-user-namespace
 brew install byobu
