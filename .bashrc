@@ -109,18 +109,18 @@ pandoc_html () {
 # 日本語を含んだファイルをpdf化
 pandoc_pdf () {
   pandoc -V documentclass=ltjarticle \
-      --latex-engine=lualatex \
-      $@
+         --latex-engine=lualatex \
+         $@
 }
 
 # 日本語を含んだファイルをpdf化(original版)
 # marginとか色々いじってる
 pandoc_note () {
   pandoc -V documentclass=ltjarticle \
-      --latex-engine=lualatex \
-      --listing \
-      --number-sections \
-      --variable=geometry:a4paper,margin=2cm \
-      -H $HOME/dotfiles/tex/template/header.tex \
-      $@
+         --latex-engine=lualatex \
+         --listing \
+         --number-sections \
+         --variable=geometry:a4paper,margin=2cm \
+         -H $HOME/dotfiles/tex/template/header.tex \
+         $@
 }
