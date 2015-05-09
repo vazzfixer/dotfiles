@@ -20,7 +20,19 @@
 # -------------------------------------------------
 # symlink dotfiles
 
-DOT_FILES=( .bash_profile .bashrc .inputrc .vimrc .vim .gitconfig .zsh .zshrc .tmux.conf .gitignore .pandoc)
+DOT_FILES=( .bash_profile
+            .bashrc
+            .inputrc
+            .vimrc
+            .vim
+            .gitconfig
+            .zsh
+            .zshrc
+            .zpreztorc
+            .tmux.conf
+            .gitignore
+            .pandoc
+           )
 BACKUP=$HOME/dotbackup
 DATE=`date +"%Y%m%d%k%M%S"`
 
