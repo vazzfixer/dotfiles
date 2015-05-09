@@ -40,12 +40,6 @@ if [ -f $PERLBREW_ROOT/etc/bashrc ]; then
   source $PERLBREW_ROOT/etc/bashrc
 fi
 
-# load rbenv settings
-if [ -d $HOME/.rbenv/bin ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
-
 # -------------------------------------------------
 # prompt
 #function prompt_command {

@@ -6,7 +6,6 @@ fi
 export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:$HOME/dotfiles/bin"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/dotfiles/bin:$PATH"
 
 export LANG=ja_JP.UTF-8
 export VISUAL=vim
