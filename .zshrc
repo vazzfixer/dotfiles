@@ -28,19 +28,19 @@ fi
 #fi
 
 # tmux start
-if [ -z "$TMUX" -a -z "$STY" ]; then
-    if type tmuxx >/dev/null 2>&1; then
-        tmuxx
-    elif type tmux >/dev/null 2>&1; then
-        if tmux has-session && tmux list-sessions | /usr/bin/grep -qE '.*]$'; then
-            tmux attach && echo "tmux attached session "
-        else
-            tmux new-session && echo "tmux created new session"
-        fi
-    elif type screen >/dev/null 2>&1; then
-        screen -rx || screen -D -RR
-    fi
-fi
+#if [ -z "$TMUX" -a -z "$STY" ]; then
+#    if type tmuxx >/dev/null 2>&1; then
+#        tmuxx
+#    elif type tmux >/dev/null 2>&1; then
+#        if tmux has-session && tmux list-sessions | /usr/bin/grep -qE '.*]$'; then
+#            tmux attach && echo "tmux attached session "
+#        else
+#            tmux new-session && echo "tmux created new session"
+#        fi
+#    elif type screen >/dev/null 2>&1; then
+#        screen -rx || screen -D -RR
+#    fi
+#fi
 
 # for work environment ( override if needed )
 if [ -f $HOME/.zshrc.work ]; then
@@ -73,3 +73,25 @@ pandoc_note () {
          -H $HOME/dotfiles/tex/template/header.tex \
          $@
 }
+
+# pandocでslideshowを作成
+# fontsize: 8pt, 9pt, 10pt, 11pt(default), 12pt, 14pt, 17pt, 20pt
+pandoc_beamer () {
+  pandoc --latex-engine=lualatex \
+         -H $HOME/dotfiles/tex/template/h-luatexja.tex \
+         -t beamer \
+         -V fontsize:14pt \
+         -V theme=default \
+         -V colortheme=beaver \
+         --listing \
+         --slide-level 1 \
+         -fmarkdown-implicit_figures \
+         $@
+}
+
+#
+rand () {
+  clear
+  expr $RANDOM % 40
+}
+
