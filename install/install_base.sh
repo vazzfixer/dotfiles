@@ -56,6 +56,7 @@ brew cask install github
 brew cask install firefox
 brew cask install insomniax
 brew cask install atom
+brew cask install sequel-pro /* mysql gui client */
 
 # remove outdated versions
 brew cleanup
