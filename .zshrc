@@ -49,49 +49,13 @@ fi
 
 # -------------------------------------------------
 # shell functions.
+dotfiles=$HOME/dotfiles
 
-# githubのcssを利用したhtmlを作成する
-pandoc_html () {
-  pandoc -s --self-contained -t html5 -c ~/.pandoc/github.css $@
-}
+# road pandoc functions
+if [ -f $dotfiles/profile/pandoc.sh ]; then
+  source $dotfiles/profile/pandoc.sh
+fi
 
-# 日本語を含んだファイルをpdf化
-pandoc_pdf () {
-  pandoc -V documentclass=ltjarticle \
-         --latex-engine=lualatex \
-         $@
-}
-
-# 日本語を含んだファイルをpdf化(original版)
-# marginとか色々いじってる
-pandoc_note () {
-  pandoc -V documentclass=ltjarticle \
-         --latex-engine=lualatex \
-         --listing \
-         --number-sections \
-         --variable=geometry:a4paper,margin=2cm \
-         -H $HOME/dotfiles/tex/template/header.tex \
-         $@
-}
-
-# pandocでslideshowを作成
-# fontsize: 8pt, 9pt, 10pt, 11pt(default), 12pt, 14pt, 17pt, 20pt
-pandoc_beamer () {
-  pandoc --latex-engine=lualatex \
-         -H $HOME/dotfiles/tex/template/h-luatexja.tex \
-         -t beamer \
-         -V fontsize:14pt \
-         -V theme=default \
-         -V colortheme=beaver \
-         --listing \
-         --slide-level 1 \
-         -fmarkdown-implicit_figures \
-         $@
-}
-
-#
 rand () {
-  clear
-  expr $RANDOM % 40
+  expr $RANDOM % 41
 }
-
