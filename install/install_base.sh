@@ -29,6 +29,7 @@ brew install node
 brew install z
 brew install htop
 brew install unrar
+brew install peco
 
 # GNU tools
 brew install xz

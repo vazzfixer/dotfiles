@@ -56,6 +56,17 @@ if [ -f $dotfiles/profile/pandoc.sh ]; then
   source $dotfiles/profile/pandoc.sh
 fi
 
+# road z.sh
+z=`brew --prefix`/etc/profile.d/z.sh
+if [ -f $z ]; then
+    source $z
+fi
+
+# road peco-select-history
+if [ -f $dotfiles/profile/peco-select-history.sh ]; then
+  source $dotfiles/profile/peco-select-history.sh
+fi
+
 rand () {
   expr $RANDOM % 41
 }
