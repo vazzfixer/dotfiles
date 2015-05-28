@@ -46,4 +46,5 @@ NeoBundle 'Shougo/vimproc', {
 "load vim setting files
 runtime! conf.d/*.vim
 
+call neobundle#end()
 NeoBundleCheck
