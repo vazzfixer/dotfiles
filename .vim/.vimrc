@@ -15,12 +15,11 @@ syntax on
 filetype off
 
 if has('vim_starting')
-  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 filetype plugin indent on
 
@@ -32,7 +31,7 @@ if neobundle#exists_not_installed_bundles()
   "finish
 endif
 
-"git clone git://github.com/Shougo/neobundle.vim ~/dotfiles/.vim/bundle/neobundle.vim
+"git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 NeoBundle 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimproc', {
@@ -43,5 +42,8 @@ NeoBundle 'Shougo/vimproc', {
     \ 'unix' : 'make -f make_unix.mak',
   \ },
 \ }
+
+"load vim setting files
+runtime! conf.d/*.vim
 
 NeoBundleCheck
