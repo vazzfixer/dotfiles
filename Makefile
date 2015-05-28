@@ -22,6 +22,7 @@ help:
 list:
 	@$(foreach val, $(DOTFILES_FILES), ls -dF $(val);)
 
+# NeoBundle,brew等の各種管理ツールのupdateを入れる
 update:
 	git pull origin master
 	git submodule init
