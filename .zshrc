@@ -27,25 +27,20 @@ fi
 #elif [[ "$OSTYPE" == linux* ]]; then
 #fi
 
-# tmux start
-#if [ -z "$TMUX" -a -z "$STY" ]; then
-#    if type tmuxx >/dev/null 2>&1; then
-#        tmuxx
-#    elif type tmux >/dev/null 2>&1; then
-#        if tmux has-session && tmux list-sessions | /usr/bin/grep -qE '.*]$'; then
-#            tmux attach && echo "tmux attached session "
-#        else
-#            tmux new-session && echo "tmux created new session"
-#        fi
-#    elif type screen >/dev/null 2>&1; then
-#        screen -rx || screen -D -RR
-#    fi
-#fi
-
 # for work environment ( override if needed )
 if [ -f $HOME/.zshrc.work ]; then
   source $HOME/.zshrc.work
 fi
+
+# -------------------------------------------------
+# zsh options
+# ディレクトリ名でcdを可能にする
+setopt auto_cd
+# 補完機能. 個別にOFFりたい場合は、 alias git="nocorrect git"とか無効に
+setopt correct
+# 補完時の表示をコンパクトにする
+setopt list_packed
+
 
 # -------------------------------------------------
 # shell functions.
