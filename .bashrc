@@ -34,22 +34,6 @@ if [ -a $HOME/.git-completion.bash ]; then
   source $HOME/.git-completion.bash
 fi
 
-# load perlbrew settings
-PERLBREW_ROOT="$HOME/perl5/perlbrew"
-if [ -f $PERLBREW_ROOT/etc/bashrc ]; then
-  source $PERLBREW_ROOT/etc/bashrc
-fi
-
-# -------------------------------------------------
-# prompt
-#function prompt_command {
-#  PS1='[\u@\h \W\[\e[0;35m\]$(__git_ps1)\[\e[0m\]]\$ '
-#  #PS1="\[$RESET\]\[$DARK_GRAY\]\u in \[$GREEN\]\w$(__git_ps1) \[$DARK_GRAY\]$\[$RESET\] "
-#  #PS1='\[\e[0;32m\][pl:${PERLBREW_PERL:-"system"}]\[\e[0m\]$ '
-#}
-
-#PROMPT_COMMAND=prompt_command
-
 # -------------------------------------------------
 # etc
 
@@ -67,54 +51,3 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
         screen -rx || screen -D -RR
     fi
 fi
-
-# OS environments
-case "${OSTYPE}}" in
-  Darwin*)
-    if [ -f $HOME/dotfiles/.bashrc_mac ]; then
-      source $HOME/dotfiles/.bashrc_mac
-    fi
-    ;;
-  linux*)
-    if [ -f $HOME/dotfiles/.bashrc_linux ]; then
-      source $HOME/dotfiles/.bashrc_linux
-    fi
-    ;;
-esac
-
-# Docker
-#if [ "`boot2docker status`" = "running" ]; then
-#    eval $(boot2docker shellinit 2>/dev/null)
-#fi
-
-# for work environment ( override if needed )
-if [ -f $HOME/.bashrc.work ]; then
-  source $HOME/.bashrc.work
-fi
-
-# -------------------------------------------------
-# shell functions.
-
-# githubのcssを利用したhtmlを作成する
-pandoc_html () {
-  pandoc -s --self-contained -t html5 -c ~/.pandoc/github.css $@
-}
-
-# 日本語を含んだファイルをpdf化
-pandoc_pdf () {
-  pandoc -V documentclass=ltjarticle \
-         --latex-engine=lualatex \
-         $@
-}
-
-# 日本語を含んだファイルをpdf化(original版)
-# marginとか色々いじってる
-pandoc_note () {
-  pandoc -V documentclass=ltjarticle \
-         --latex-engine=lualatex \
-         --listing \
-         --number-sections \
-         --variable=geometry:a4paper,margin=2cm \
-         -H $HOME/dotfiles/etc/tex/template/header.tex \
-         $@
-}
