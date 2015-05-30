@@ -47,8 +47,8 @@ setopt list_packed
 dotfiles=$HOME/dotfiles
 
 # road pandoc functions
-if [ -f $dotfiles/profile/pandoc.sh ]; then
-  source $dotfiles/profile/pandoc.sh
+if [ -f $dotfiles/etc/profile/pandoc.sh ]; then
+  source $dotfiles/etc/profile/pandoc.sh
 fi
 
 # road z.sh
@@ -58,8 +58,8 @@ if [ -f $z ]; then
 fi
 
 # road peco-select-history
-if [ -f $dotfiles/profile/peco-select-history.sh ]; then
-  source $dotfiles/profile/peco-select-history.sh
+if [ -f $dotfiles/etc/profile/peco-select-history.sh ]; then
+  source $dotfiles/etc/profile/peco-select-history.sh
 fi
 
 rand () {
