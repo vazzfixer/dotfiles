@@ -115,6 +115,6 @@ pandoc_note () {
          --listing \
          --number-sections \
          --variable=geometry:a4paper,margin=2cm \
-         -H $HOME/dotfiles/tex/template/header.tex \
+         -H $HOME/dotfiles/etc/tex/template/header.tex \
          $@
 }

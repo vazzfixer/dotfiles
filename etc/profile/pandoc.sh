@@ -22,7 +22,7 @@ pandoc_test () {
          --latex-engine=lualatex \
          --listing \
          --number-sections \
-         -H $HOME/dotfiles/tex/template/list.tex \
+         -H $HOME/dotfiles/etc/tex/template/list.tex \
          -fmarkdown-implicit_figures \
          --variable=geometry:a4paper,margin=2cm \
          -o ${outName} \
@@ -38,7 +38,7 @@ pandoc_note () {
            --listing \
            --number-sections \
            --variable=geometry:a4paper,margin=2cm \
-           -H $HOME/dotfiles/tex/template/header.tex \
+           -H $HOME/dotfiles/etc/tex/template/header.tex \
            -fmarkdown-implicit_figures \
            -o ${outName} \
            $@
@@ -49,7 +49,7 @@ pandoc_note () {
 pandoc_beamer () {
   local outName=`change_ext $1 pdf`
   pandoc --latex-engine=lualatex \
-         -H $HOME/dotfiles/tex/template/h-luatexja.tex \
+         -H $HOME/dotfiles/etc/tex/template/h-luatexja.tex \
          -t beamer \
          -V fontsize:14pt \
          -V theme=default \
