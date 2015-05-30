@@ -23,10 +23,10 @@ $HOME/dotfiles/etc/init/install_all.sh
 # -------------------------------------------------
 # mac locate command
 
-diff=`diff /System/Library/LaunchDaemons/com.apple.locate.plist $HOME/dotfiles/macos/launchctl/com.apple.locate.plist`
+diff=`diff /System/Library/LaunchDaemons/com.apple.locate.plist $HOME/dotfiles/etc/launchctl/com.apple.locate.plist`
 if [ $? ne 0 ];then
   echo "Update locate.plist..."
-  sudo cp -f $HOME/dotfiles/macos/launchctl/com.apple.locate.plist /System/Library/LaunchDaemons/com.apple.locate.plist
+  sudo cp -f $HOME/dotfiles/etc/launchctl/com.apple.locate.plist /System/Library/LaunchDaemons/com.apple.locate.plist
   sudo launchctl unload /System/Library/LaunchDaemons/com.apple.locate.plist
   sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 fi
