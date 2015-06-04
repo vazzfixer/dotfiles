@@ -1,5 +1,5 @@
 DOTFILES_GITHUB   := "https://github.com/kegamin/dotfiles.git"
-DOTFILES_EXCLUDES := .DS_Store .git .gitmodules .travis.yml
+DOTFILES_EXCLUDES := .DS_Store .git .gitmodules
 DOTFILES_TARGET   := $(wildcard .??*) bin
 DOTFILES_DIR      := $(PWD)
 DOTFILES_FILES    := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
