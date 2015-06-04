@@ -31,6 +31,7 @@ brew install htop
 brew install unrar
 brew install peco
 brew install trash # ゴミ箱逝き rmを置き換える
+brew install editorconfig
 
 # GNU tools
 brew install xz
