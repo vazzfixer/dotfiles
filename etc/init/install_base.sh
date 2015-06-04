@@ -30,6 +30,7 @@ brew install z
 brew install htop
 brew install unrar
 brew install peco
+brew install trash # ゴミ箱逝き rmを置き換える
 
 # GNU tools
 brew install xz
@@ -57,7 +58,8 @@ brew cask install github
 brew cask install firefox
 brew cask install insomniax
 brew cask install atom
-brew cask install sequel-pro /* mysql gui client */
+brew cask install sequel-pro # mysql gui client
+brew cask install cheatsheet # cmdキー長押しでショートカット表示
 
 # remove outdated versions
 brew cleanup
