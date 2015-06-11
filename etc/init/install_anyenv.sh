@@ -1,15 +1,15 @@
 #!/bin/sh
 
-# ruby
-brew install rbenv
-brew install ruby-build
-brew install rbenv-gemset
-brew install rbenv-gem-rehash
+# anyenvはgit submoduleで入ってる
 
-if [ -d $HOME/.rbenv/plugins/ruby-build ]; then
-  rm -rf ~/.rbenv/plugins/ruby-build
-fi
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+anyenv update
+anyenv install rbenv
+anyenv install pyenv
+anyenv install plenv
 
-# heroku
-brew install heroku-toolbelt
+# anyenv plugins
+mkdir -p $(anyenv root)/plugins
+git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+
+# rbenv utilities
+gem install rbenv-rehash
