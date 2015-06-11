@@ -7,6 +7,7 @@ brew tap homebrew/binary
 brew tap phinze/homebrew-cask
 
 # install packages
+brew install figlet # making banner
 brew install ack
 brew install ag
 brew install autoconf
@@ -64,3 +65,6 @@ brew cask install cheatsheet # cmdキー長押しでショートカット表示
 
 # remove outdated versions
 brew cleanup
+
+figlet -fdigital 'base brew components installed'
+
