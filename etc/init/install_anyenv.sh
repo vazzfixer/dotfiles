@@ -13,3 +13,6 @@ git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv
 
 # rbenv utilities
 gem install rbenv-rehash
+
+# plenv utilities
+plenv install-cpanm
