@@ -27,6 +27,10 @@ fi
 #elif [[ "$OSTYPE" == linux* ]]; then
 #fi
 
+if [ -d $HOME/.anyenv ] ; then
+    eval "$(anyenv init -)"
+fi
+
 # for work environment ( override if needed )
 if [ -f $HOME/.zshrc.work ]; then
   source $HOME/.zshrc.work

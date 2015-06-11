@@ -37,8 +37,8 @@ typeset -gU cdpath fpath mailpath path
 path=(
   /usr/local/{bin,sbin}
   $HOME/dotfiles/bin        # original dotfiles bin
-  $HOME/.rbenv/bin          # rbenv
   $HOME/.cabal/bin          # haskel package manager
+  $HOME/.anyenv/bin
   /usr/texbin               # tex
   $path
 )
@@ -68,11 +68,6 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
-
-# rbenv init
-if which rbenv > /dev/null; then
-    eval "$(rbenv init -)";
-fi
 
 # other export definitions
 export GITHUB_URL=https://github.com/
