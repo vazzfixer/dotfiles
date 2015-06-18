@@ -41,6 +41,9 @@
   * Shift+矢印 : pane移動
   * 矢印 : pane サイズ変更(連打可能
 
+## tmuxinator
+  * tmux start work
+
 ## その他ショートカット等
 
 ### markdownのPDF/html可
