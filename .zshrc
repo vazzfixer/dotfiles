@@ -50,20 +50,14 @@ setopt list_packed
 # shell functions.
 dotfiles=$HOME/dotfiles
 
-# road pandoc functions
-if [ -f $dotfiles/etc/profile/pandoc.sh ]; then
-  source $dotfiles/etc/profile/pandoc.sh
-fi
+for textfile in $( ls $dotfiles/etc/profile/*.sh ); do
+  source $textfile
+done
 
 # road z.sh
 z=`brew --prefix`/etc/profile.d/z.sh
 if [ -f $z ]; then
     source $z
-fi
-
-# road peco-select-history
-if [ -f $dotfiles/etc/profile/peco-select-history.sh ]; then
-  source $dotfiles/etc/profile/peco-select-history.sh
 fi
 
 rand () {
