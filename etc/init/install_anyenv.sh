@@ -6,6 +6,7 @@ anyenv update
 anyenv install rbenv
 anyenv install pyenv
 anyenv install plenv
+anyenv install ndenv
 
 # anyenv plugins
 mkdir -p $(anyenv root)/plugins
