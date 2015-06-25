@@ -43,6 +43,12 @@ path=(
   $path
 )
 
+# add anyenv pathes
+for D in `ls $HOME/.anyenv/envs`
+do
+    export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+done
+
 #
 # Less
 #
