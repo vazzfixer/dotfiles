@@ -42,7 +42,8 @@
   * 矢印 : pane サイズ変更(連打可能
 
 ## tmuxinator
-  * tmux start work
+
+  * mux start work
 
 ## その他ショートカット等
 
@@ -56,3 +57,5 @@ $ pandoc_markdown hoge.markdown -o hoge.html
 ```
 $ pandoc_pdf hoge.markdown -o hoge.pdf
 ```
+
+
