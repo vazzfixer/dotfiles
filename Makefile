@@ -28,6 +28,7 @@ update:
 	git submodule init
 	git submodule update
 	git submodule foreach git pull origin master
+	brew file update
 
 deploy:
 	@echo 'Start deploy dotfiles current directory.'
