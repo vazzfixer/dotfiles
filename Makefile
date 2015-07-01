@@ -6,9 +6,6 @@ DOTFILES_FILES    := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
 
 all: install
 
-test:
-	@prove $(PROVE_OPT) $(wildcard ./etc/test/*_test.pl)
-
 help:
 	@echo "make list           #=> List the files"
 	@echo "make update         #=> Fetch changes"
