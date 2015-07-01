@@ -41,10 +41,11 @@ fi
 # ディレクトリ名でcdを可能にする
 setopt auto_cd
 # 補完機能. 個別にOFFりたい場合は、 alias git="nocorrect git"とか無効に
-setopt correct
+# やっぱ邪魔なのでOFFる
+#setopt correct
+
 # 補完時の表示をコンパクトにする
 setopt list_packed
-
 
 # -------------------------------------------------
 # shell functions.
