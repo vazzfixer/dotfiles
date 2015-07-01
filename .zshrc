@@ -40,6 +40,11 @@ if [ -f $HOME/.zshrc.work ]; then
   source $HOME/.zshrc.work
 fi
 
+# brew api token
+if [ -f ~/.brew_api_token ];then
+  source ~/.brew_api_token
+fi
+
 # -------------------------------------------------
 # zsh options
 # ディレクトリ名でcdを可能にする
