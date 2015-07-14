@@ -16,6 +16,7 @@
 #     - .tmux.conf
 #     - .pandoc/
 #     - .anyenv
+#     - .weechat/
 #   - NeoBundle(vim plugin manager)
 
 # -------------------------------------------------
@@ -34,6 +35,7 @@ DOT_FILES=( .bash_profile
             .gitignore
             .pandoc
             .anyenv
+            .weechat
            )
 BACKUP=$HOME/dotbackup
 DATE=`date +"%Y%m%d%k%M%S"`
