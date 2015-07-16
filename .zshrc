@@ -8,6 +8,7 @@
 # -------------------------------------------------
 # zsh alias
 alias vi='vim'
+alias htop='sudo htop'
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -51,7 +52,7 @@ fi
 setopt auto_cd
 # 補完機能. 個別にOFFりたい場合は、 alias git="nocorrect git"とか無効に
 # やっぱ邪魔なのでOFFる
-#setopt correct
+unsetopt correct
 
 # 補完時の表示をコンパクトにする
 setopt list_packed
