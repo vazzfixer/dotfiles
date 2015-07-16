@@ -13,40 +13,28 @@ help:
 	@echo "make init           #=> Setup environment"
 	@echo "make install        #=> Updating, deploying and initializng"
 	@echo "make clean          #=> Remove the dotfiles"
-	@echo "make brew           #=> Update brew packages"
-	@echo "make cask           #=> Update cask packages"
 
 list:
 	@$(foreach val, $(DOTFILES_FILES), ls -dF $(val);)
 
-# NeoBundle,brew等の各種管理ツールのupdateを入れる
+# TODO: NeoBundle,brew等の各種管理ツールのupdateを入れる
 update:
 	git pull origin master
 	git submodule init
 	git submodule update
 	git submodule foreach git pull origin master
-	brew file update
+	anyenv update
+#	brew file update
+#	vim -u ~/.vimrc -i NONE -c "try | NeoBundleUpdate! | finally | q! | endtry" -e -s -V1
 
 deploy:
-	@echo 'Start deploy dotfiles current directory.'
-	@echo 'If this is "dotdir", curretly it is ignored and copy your hand.'
+	@echo 'Copyright (c) 2013-2015 BABAROT All Rights Reserved.'
+	@echo '==> Start to deploy dotfiles to home directory.'
 	@echo ''
 	@$(foreach val, $(DOTFILES_FILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
 init:
-	@$(foreach val, $(wildcard ./etc/init/*.sh), bash $(val);)
-ifeq ($(shell uname), Darwin)
-	@$(foreach val, $(wildcard ./etc/init/osx/*.sh), bash $(val);)
-
-homebrew:
-	@bash $(DOTFILES_DIR)/etc/init/osx/install_homebrew.sh
-
-brew: homebrew
-	@bash $(DOTFILES_DIR)/etc/init/osx/Brewfile
-
-cask: homebrew
-	@bash $(DOTFILES_DIR)/etc/init/osx/Caskfile
-endif
+	@DOTPATH=$(PWD) bash $(PWD)/etc/init/init.sh:
 
 install: update deploy init
 	@exec $$SHELL
