@@ -8,4 +8,4 @@ e_header "NeoBundleInstall"
 vim -u $HOME/.vimrc -i NONE -c "try | NeoBundleInstall! | finally | q! | endtry" -e -s -V1
 
 e_newline
-e_arrow "installed."
+e_done "installed."
