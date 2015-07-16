@@ -13,5 +13,7 @@ if [ $? -ne 0 ];then
   sudo launchctl unload /System/Library/LaunchDaemons/com.apple.locate.plist
   sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
   e_done "update locate.plist"
+else
+  e_arrow "locate plist is already installed"
 fi
 
