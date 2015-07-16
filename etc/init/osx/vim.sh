@@ -12,6 +12,8 @@ if [ -f ${new_vim} ]; then
   fi
   sudo ln -s `ls -1 /usr/local/Cellar/vim/*/bin/vim` /usr/bin 2> /dev/null
   e_done "installed."
+else
+  e_arrow "latest vim is already installed."
 fi
 
 "$DOTPATH"/etc/init/common/vim.sh
