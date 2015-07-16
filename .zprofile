@@ -82,3 +82,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
   export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 fi
+
+# for maxtex
+if [ -f /usr/libexec/path_helper ]; then
+  eval `/usr/libexec/path_helper -s`
+fi
