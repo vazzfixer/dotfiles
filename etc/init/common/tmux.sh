@@ -5,7 +5,7 @@
 # tmuxのヘッダーに表示するようのツール群を配置
 if [ ! -d /usr/local/bin ];then
   e_newline
-  e_header "creating /usr/local/bin foler"
+  e_header "creating /usr/local/bin folder"
   mkdir /usr/local/bin
   e_done "finished."
 fi
