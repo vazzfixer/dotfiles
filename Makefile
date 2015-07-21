@@ -26,6 +26,9 @@ update:
 	anyenv update
 #	brew file update
 #	vim -u ~/.vimrc -i NONE -c "try | NeoBundleUpdate! | finally | q! | endtry" -e -s -V1
+#	cabal update
+#	sudo tlmgr update --self
+#	sudo tlmgr update --all
 
 deploy:
 	@echo 'Copyright (c) 2013-2015 BABAROT All Rights Reserved.'
