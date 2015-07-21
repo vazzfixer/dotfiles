@@ -37,6 +37,10 @@ e_arrow() {
     printf " \033[37;1m%s\033[m\n" "➜ $*"
 }
 
+e_prompt() {
+    printf " \033[37;1m%s\033[m\033[32m → \033[m" "$*"
+}
+
 e_indent() {
     for ((i=0; i<${1:-4}; i++)); do
         echon " "
