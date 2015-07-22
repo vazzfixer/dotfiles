@@ -1,10 +1,8 @@
 #!/bin/sh
 
-brew install automake
-brew install pkg-config
-brew tap sanemat/font
-brew install Caskroom/cask/xquartz
-brew install --powerline --vim-powerline ricty
+. "$DOTPATH"/etc/lib/vital.sh
+
+e_header "install ricty fonts"
 
 # installing ricty fonts
 ricty_ver=`ls -1 /usr/local/Cellar/ricty/`;
@@ -15,8 +13,7 @@ if [ -d /usr/local/Cellar/ricty/${ricty_ver}/share/fonts ]; then
   fc-cache -vf
   defaults -currentHost write -globalDomain AppleFontSmoothing -int 2
 else
-  echo "rictyのフォントが未インストール."
+  e_error "rictyのフォントが未インストール."
 fi
 
-# remove outdated versions
-brew cleanup
+e_done "ricty fonts"
