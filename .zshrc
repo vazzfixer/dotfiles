@@ -27,11 +27,6 @@ fi
 #antigen-apply
 #
 
-# each ostype settings
-#if [[ "$OSTYPE" == darwin* ]]; then
-#elif [[ "$OSTYPE" == linux* ]]; then
-#fi
-
 if [ -d $HOME/.anyenv ] ; then
     eval "$(anyenv init -)"
 fi
@@ -66,10 +61,10 @@ for textfile in $( ls $dotfiles/etc/profile/*.sh ); do
 done
 
 # road z.sh
-z=`brew --prefix`/etc/profile.d/z.sh
-if [ -f $z ]; then
-    source $z
-fi
+#z=`brew --prefix`/etc/profile.d/z.sh
+#if [ -f $z ]; then
+#    source $z
+#fi
 
 rand () {
   expr $RANDOM % 41
