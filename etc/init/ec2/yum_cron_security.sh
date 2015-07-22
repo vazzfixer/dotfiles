@@ -5,17 +5,15 @@
 e_newline
 e_header "install yum-cron-security"
 sudo yum install yum-cron-security -y
-e_success "installed yum-cron-security"
 
+sudo service yum-cron start
+sudo chkconfig yum-cron on
 
+status=`chkconfig --list yum-cron | cut -f5 | cut -d':' -f2`
+if [ "$status" = "on" ]; then
+  e_success "checkconfig yum-cron on"
+else
+  e_error "checkconfig yum-cron on"
+fi
 
- yum-cronが起動されている場合
- $ service yum-cron status
- Scheduled yum updates are enabled.
- yum-cronが起動されていない場合
- $ service yum-cron status
- Scheduled yum updates are disabled.
-
- sudo service yum-cron start
-
- sudo chkconfig yum-cron on
+e_done "intall yum-cron-security"
