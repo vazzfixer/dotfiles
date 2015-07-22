@@ -5,6 +5,10 @@
 # anyenvはgit submoduleで入ってるのでinstallは不要
 # updateして最新版の**envを入れていく.
 
+if ! has anyenv; then
+  e_failure "anyenv command not found."
+fi
+
 e_newline
 e_header "update anyenv and installing **env"
 anyenv update
