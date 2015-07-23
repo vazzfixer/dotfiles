@@ -27,7 +27,7 @@ install_dist_files() {
   done
 }
 
-dist=get_dist
+dist=`get_dist`
 if [ "$dist" = "Amazon" ]; then
   install_yum_package
   install_dist_files
