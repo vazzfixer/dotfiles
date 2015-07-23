@@ -1,9 +1,12 @@
 [submodule ".anyenv"]
 	path = .anyenv
 	url = https://github.com/riywo/anyenv
+	ignore = dirty
 [submodule "etc/profile/zaw"]
 	path = etc/profile/zaw
 	url = git://github.com/zsh-users/zaw.git
+	ignore = dirty
 [submodule ".vim/bundle/neobundle.vim"]
 	path = .vim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim.git
+	ignore = dirty
