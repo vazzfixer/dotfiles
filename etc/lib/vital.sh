@@ -188,6 +188,15 @@ get_os() {
     done
 }
 
+get_dist() {
+  if is_linux; then
+    if [ -f /etc/issue ]; then
+      # Amazon / Debian / CentOS
+      echo `head -n1 /etc/issue | cut -d' ' -f1`
+    fi
+  fi
+}
+
 noecho() {
     if [ "$(echo -n)" = "-n" ]; then
         echo "${*:-> }\c"
