@@ -15,26 +15,29 @@ change_default_to_zsh() {
   chsh -s $(which zsh)
 }
 
-install_dist_files() {
-  for i in "$DOTPATH"/etc/init/"$(get_os)"/"$(get_dist)"/*[^init].sh
-  do
-    if [ -f "$i" ]; then
-      e_arrow "$(basename "$i")"
-      bash "$i"
-    else
-      continue
-    fi
-  done
+yum_cron_security() {}
+  e_newline
+  e_header "install yum-cron-security"
+  sudo yum install yum-cron-security -y
+
+  sudo service yum-cron start
+  sudo chkconfig yum-cron on
+
+  status=`chkconfig --list yum-cron | cut -f5 | cut -d':' -f2`
+  if [ "$status" = "on" ]; then
+    e_success "checkconfig yum-cron on"
+  else
+    e_error "checkconfig yum-cron on"
+  fi
+
+  e_done "intall yum-cron-security"
 }
 
 dist=`get_dist`
-if [ "$dist" = "Amazon" ]; then
-  e_header "Set password for ec2-user"
-  sudo passwd ec2-user
+if [ "$dist" = "Amazon" -o "$dist" = "CentOS" ]; then
   install_yum_package
   install_dist_files
-elif [ "$dist" = "CentOS" ]; then
-  install_yum_package
+  yum_cron_security
 else
   e_error "unsupported distribution. install common settings only."
 fi
