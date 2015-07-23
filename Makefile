@@ -23,7 +23,7 @@ update:
 	git submodule init
 	git submodule update
 	git submodule foreach git pull origin master
-	anyenv update
+#	anyenv update
 #	brew file update
 #	vim -u ~/.vimrc -i NONE -c "try | NeoBundleUpdate! | finally | q! | endtry" -e -s -V1
 #	cabal update
