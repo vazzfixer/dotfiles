@@ -2,18 +2,6 @@
 
 . "$DOTPATH"/etc/lib/vital.sh
 
-dist=get_dist
-if [ "$dist" = "Amazon" ]; then
-  install_yum_package
-  install_dist_files
-elif [ "$dist" = "CentOS" ]; then
-  install_yum_package
-else
-  e_error "unsupported distribution. install common settings only."
-fi
-
-change_default_to_zsh
-
 install_yum_package() {
   e_header "install yum packages"
   sudo yum install gcc
@@ -38,3 +26,15 @@ install_dist_files() {
     fi
   done
 }
+
+dist=get_dist
+if [ "$dist" = "Amazon" ]; then
+  install_yum_package
+  install_dist_files
+elif [ "$dist" = "CentOS" ]; then
+  install_yum_package
+else
+  e_error "unsupported distribution. install common settings only."
+fi
+
+change_default_to_zsh
