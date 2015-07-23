@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. "$DOTPATH"/etc/lib/vital.sh
+source $HOME/dotfiles/etc/lib/vital.sh
 
 if [ "`whoami`" = "$exec_user" ]; then
   e_failure "Login ec2-user to execute this script"
