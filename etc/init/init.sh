@@ -24,7 +24,7 @@ do
 done 2>/dev/null &
 
 e_arrow "init.sh"
-$DOTPATH"/etc/init/"$(get_os)"/init.sh
+$DOTPATH/etc/init/"$(get_os)"/init.sh
 
 # shellcheck disable=SC2102
 for i in "$DOTPATH"/etc/init/"$(get_os)"/*[^init].sh
