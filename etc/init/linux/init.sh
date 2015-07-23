@@ -4,9 +4,9 @@
 
 install_yum_package() {
   e_header "install yum packages"
-  sudo yum install gcc
-  sudo yum install tmux
-  sudo yum install zsh
+  sudo yum install -y gcc
+  sudo yum install -y tmux
+  sudo yum install -y zsh
   e_success "install yum packages"
 }
 
@@ -29,6 +29,8 @@ install_dist_files() {
 
 dist=`get_dist`
 if [ "$dist" = "Amazon" ]; then
+  e_header "Set password for ec2-user"
+  sudo passwd ec2-user
   install_yum_package
   install_dist_files
 elif [ "$dist" = "CentOS" ]; then
