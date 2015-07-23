@@ -15,7 +15,7 @@ change_default_to_zsh() {
   chsh -s $(which zsh)
 }
 
-yum_cron_security() {}
+yum_cron_security() {
   e_newline
   e_header "install yum-cron-security"
   sudo yum install yum-cron-security -y

@@ -12,6 +12,11 @@ if [ ! "$SHELL" = "zsh" ]; then
   chsh -s $zsh_path
 fi
 
+#zshに切り替える
+exec /bin/zsh
+. $HOME/.zprofile
+. $HOME/.zshrc
+
 # preztoの最新版を$HOME/.zpreztoに置く
 antigen bundle sorin-ionescu/prezto
 ln -s ~/.antigen/repos/.zprezto ~/.zprezto

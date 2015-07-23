@@ -23,6 +23,11 @@ sudo usermod -G wheel $NEWUSER
 sudo rsync -a ~/.ssh/authorized_keys /home/$NEWUSER/.ssh/
 sudo chown -R $NEWUSER:$NEWUSER /home/$NEWUSER/.ssh
 sudo chmod -R go-rwx /home/$NEWUSER/.ssh
+e_success "creating $NEWUSER"
+
+e_header "setting new passwd"
+sudo passwd $NEWUSER
+e_success "setting new passwd"
 
 sudoers_file=/etc/sudoers.d/user
 cat << EOF | sudo tee $sudoers_file >/dev/null
