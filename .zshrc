@@ -28,7 +28,7 @@ fi
 #
 
 if [ -d $HOME/.anyenv ] ; then
-    eval "$(anyenv init -)"
+    eval "$(anyenv init - zsh)"
 fi
 
 # for work environment ( override if needed )
