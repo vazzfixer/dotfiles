@@ -42,3 +42,4 @@ do
 done
 
 e_done "$0: Finish!!" | sed "s $DOTPATH \$DOTPATH g"
+exec $SHELL -l
