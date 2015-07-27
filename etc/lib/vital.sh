@@ -190,7 +190,10 @@ get_os() {
 
 get_dist() {
   if is_linux; then
-    if [ -f /etc/issue ]; then
+    if [ -f /etc/redhat-release ]; then
+      # RedHat / CentOS
+      echo `head -n1 /etc/redhat-release | cut -d' ' -f1`
+    elif [ -f /etc/issue ]; then
       # Amazon / Debian / CentOS
       echo `head -n1 /etc/issue | cut -d' ' -f1`
     fi

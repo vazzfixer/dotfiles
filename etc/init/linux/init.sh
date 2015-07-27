@@ -11,8 +11,15 @@ install_yum_package() {
 }
 
 change_default_to_zsh() {
-  e_header "changing default shell to zsh"
-  chsh -s $(which zsh)
+  if has zsh; then
+    e_header "changing default shell to zsh"
+    my_zsh=$(which zsh)
+    grep -E "$my_zsh" /etc/shells
+    if [ $? -eq 1 ]; then
+      sudo sh -c "echo $my_zsh >> /etc/shells"
+    fi
+    chsh -s $(which zsh)
+  fi
 }
 
 yum_cron_security() {
@@ -34,9 +41,10 @@ yum_cron_security() {
 }
 
 dist=`get_dist`
-if [ "$dist" = "Amazon" -o "$dist" = "CentOS" ]; then
+if [ "$dist" = "CentOS" ]; then
   install_yum_package
-  install_dist_files
+elif [ "$dist" = "Amazon" ]; then
+  install_yum_package
   yum_cron_security
 else
   e_error "unsupported distribution. install common settings only."
