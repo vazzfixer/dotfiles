@@ -1,1 +1,1 @@
-NeoBundle 'git://github.com/vim-scripts/VimCoder.jar'
+NeoBundle 'https://github.com/vim-scripts/VimCoder.jar'
