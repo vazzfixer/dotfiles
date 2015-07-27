@@ -10,18 +10,6 @@ install_yum_package() {
   e_success "install yum packages"
 }
 
-change_default_to_zsh() {
-  if has zsh; then
-    e_header "changing default shell to zsh"
-    my_zsh=$(which zsh)
-    grep -E "$my_zsh" /etc/shells
-    if [ $? -eq 1 ]; then
-      sudo sh -c "echo $my_zsh >> /etc/shells"
-    fi
-    chsh -s $(which zsh)
-  fi
-}
-
 yum_cron_security() {
   e_newline
   e_header "install yum-cron-security"
@@ -49,5 +37,3 @@ elif [ "$dist" = "Amazon" ]; then
 else
   e_error "unsupported distribution. install common settings only."
 fi
-
-change_default_to_zsh
