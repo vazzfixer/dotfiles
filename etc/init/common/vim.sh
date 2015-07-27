@@ -5,11 +5,9 @@
 e_newline
 e_header "making vimproc"
 if is_osx ; then
-  cd $HOME/.vim/bundle/vimproc
-  make -f make_mac.mak
+  make -C $HOME/.vim/bundle/vimproc -f make_mac.mak
 elif is_linux ; then
-  cd $HOME/.vim/bundle/vimproc
-  make -f make_unix.mak
+  make -C $HOME/.vim/bundle/vimproc -f make_unix.mak
 else
   e_error "get_os failed. Ignore making vimproc."
 fi
