@@ -14,6 +14,7 @@ fi
 
 sudo adduser $NEWUSER
 sudo usermod -G wheel $NEWUSER
+sudo passwd $NEWUSER
 
 sudoers_file=/etc/sudoers.d/$NEWUSER
 cat << EOF | sudo tee $sudoers_file >/dev/null
