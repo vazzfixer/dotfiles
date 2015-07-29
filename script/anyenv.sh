@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. "$DOTPATH"/etc/lib/vital.sh
+. $HOME/dotfiles/etc/lib/vital.sh
 
 # anyenvはgit submoduleで入ってるのでinstallは不要
 # updateして最新版の**envを入れていく.
