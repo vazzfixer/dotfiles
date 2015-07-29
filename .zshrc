@@ -69,6 +69,25 @@ if grep --help | grep -q -- --color; then
 fi
 
 # -------------------------------------------------
+# history
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000000
+SAVEHIST=$HISTSIZE
+## ヒストリファイルにコマンドラインだけではなく実行時刻と実行時間も保存する。
+setopt extended_history
+## 同じコマンドラインを連続で実行した場合はヒストリに登録しない。
+setopt hist_ignore_dups
+## スペースで始まるコマンドラインはヒストリに追加しない。
+setopt hist_ignore_space
+## すぐにヒストリファイルに追記する。
+setopt inc_append_history
+## zshプロセス間でヒストリを共有する。
+setopt share_history
+## C-sでのヒストリ検索が潰されてしまうため、出力停止・開始用にC-s/C-qを使わない。
+setopt no_flow_control
+
+# -------------------------------------------------
 # zsh options
 # ディレクトリ名でcdを可能にする
 setopt auto_cd
