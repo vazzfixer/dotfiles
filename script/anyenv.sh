@@ -64,3 +64,5 @@ else
 fi
 
 e_done "**env utilities installed"
+
+exec $SHELL -l
