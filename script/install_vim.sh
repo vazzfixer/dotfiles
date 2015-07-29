@@ -8,7 +8,7 @@ source $HOME/dotfiles/etc/lib/vital.sh
 e_header "install latest vim"
 
 # 必要なパッケージinstall
-sudo yum install ncurses-devel gtk2-devel atk-devel libX11-devel libXt-devel lua-devel
+sudo yum -y install ncurses-devel gtk2-devel atk-devel libX11-devel libXt-devel lua-devel
 
 if [ -d /usr/local/src/vim ]; then
   e_arrow "delete old src at /usr/local/src/vim"
