@@ -41,4 +41,7 @@ sudo make && sudo make install
 e_header "---------- show vim version info below ----------"
 /usr/local/bin/vim --version | head -4
 e_header "-------------------------------------------------"
+
+sudo mv /bin/vim /bin/vim.old
+sudo ln -s /usr/local/bin/vim /bin/vim
 e_done "install latest vim to /usr/local/bin/vim"
