@@ -12,6 +12,11 @@
 * color設定をpreviewする  
   :Unite colorscheme -auto-preview
 
+* color
+ * :colorscheme splatoon
+ * :colorscheme splatoon-1on1
+ * :colorscheme splatoon-random
+
 ### NERDTree
 
 * Ctrl-h : move to left tab

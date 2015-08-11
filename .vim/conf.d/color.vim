@@ -1,5 +1,6 @@
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'rhysd/vim-color-splatoon'
 
 " solarized
 NeoBundle 'altercation/vim-colors-solarized'
