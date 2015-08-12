@@ -6,6 +6,8 @@
   #  name  =
 [github]
   user = kegamin
+[ghq] # https://github.com/motemen/ghq
+  root = ~/repo
 [color]
   ui = true
 [core]
