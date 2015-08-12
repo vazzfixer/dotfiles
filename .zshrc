@@ -4,6 +4,13 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+#
+
+# -------------------------------------------------
+# Keybind configuration
+
+# emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes to end of it)
+bindkey -e
 
 # -------------------------------------------------
 # zsh alias
