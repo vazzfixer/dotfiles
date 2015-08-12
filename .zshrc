@@ -47,6 +47,13 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
 fi
 
 # -------------------------------------------------
+# go settings
+
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# -------------------------------------------------
 # history
 
 HISTFILE=~/.zsh_history
