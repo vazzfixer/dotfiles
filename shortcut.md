@@ -4,9 +4,10 @@
 
 ### cool-peco
 
-* ^p cool-peco-ps
-* ^s cool-peco-ghq
-* ^r cool-peco-history
+* ^p^p cool-peco-ps
+* ^p^g cool-peco-ghq
+* ^p^r cool-peco-history
+* ^p^s cool-peco-file-search
 
 ## vim関連
 

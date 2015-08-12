@@ -12,5 +12,8 @@
 	ignore = dirty
 [submodule ".zsh/cool-peco"]
 	path = .zsh/cool-peco
-	url = https://github.com/ryoppy/cool-peco
+	url = https://github.com/kegamin/cool-peco
 	ignore = dirty
+[submodule ".zsh/z"]
+	path = .zsh/z
+	url = https://github.com/rupa/z

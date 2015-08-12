@@ -24,9 +24,15 @@ if [[ -f $HOME/.zsh/cool-peco/cool-peco ]]; then
   zle -N cool-peco-ps
   zle -N cool-peco-ghq
   zle -N cool-peco-history
-  bindkey '^p' cool-peco-ps
-  bindkey '^s' cool-peco-ghq
-  bindkey '^r' cool-peco-history
+  zle -N cool-peco-filename-search
+  bindkey '^p^p' cool-peco-ps
+  bindkey '^p^g' cool-peco-ghq
+  bindkey '^p^r' cool-peco-history
+  bindkey '^p^s' cool-peco-filename-search
+fi
+
+if [[ -f $HOME/.zsh/z/z.sh ]]; then
+  source $HOME/.zsh/z/z.sh
 fi
 
 # Load the oh-my-zsh's library.
