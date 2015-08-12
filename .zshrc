@@ -15,9 +15,18 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
 if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
   source $HOME/.zsh/antigen/antigen.zsh
+fi
+
+if [[ -f $HOME/.zsh/cool-peco/cool-peco ]]; then
+  source $HOME/.zsh/cool-peco/cool-peco
+  zle -N cool-peco-ps
+  zle -N cool-peco-ghq
+  zle -N cool-peco-history
+  bindkey '^p' cool-peco-ps
+  bindkey '^s' cool-peco-ghq
+  bindkey '^r' cool-peco-history
 fi
 
 # Load the oh-my-zsh's library.

@@ -1,5 +1,13 @@
 # 定義したオレオレショートカット一覧
 
+## zsh関連
+
+### cool-peco
+
+* ^p cool-peco-ps
+* ^s cool-peco-ghq
+* ^r cool-peco-history
+
 ## vim関連
 
 ### previm
