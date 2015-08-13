@@ -21,4 +21,7 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/kegamin/prezto.git
+[submodule ".zsh/zaw"]
+	path = .zsh/zaw
+	url = http://github.com/zsh-users/zaw.git
 	ignore = dirty
