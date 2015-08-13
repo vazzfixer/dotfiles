@@ -2,12 +2,18 @@
 
 ## zsh関連
 
-### cool-peco
-
-* ^p^p cool-peco-ps
-* ^p^g cool-peco-ghq
-* ^p^r cool-peco-history
-* ^p^s cool-peco-file-search
+* z hoge<TAB> : ディレクトリ移動
+* prefix ^j
+ * ^j : zaw-cdr ディレクトリ移動
+ * ^r : zaw-history コマンド履歴
+ * ^p : zaw-process プロセスID検索
+ * ^t : zaw-tmux tmux指定
+ * ^s : zaw-searcher 検索
+ * ^g : cool-peco-ghq ghq
+* prefix ^g : git関連
+ * ^s : zaw-git-status
+ * ^f : zaw-git-files
+ * ^b : zaw-git-branch
 
 ## vim関連
 
