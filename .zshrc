@@ -112,7 +112,3 @@ dotfiles=$HOME/dotfiles
 for textfile in $( ls $dotfiles/etc/profile/*.sh ); do
   source $textfile
 done
-
-rand () {
-  expr $RANDOM % 41
-}
