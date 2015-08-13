@@ -25,3 +25,4 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/kegamin/prezto.git
+	ignore = dirty
