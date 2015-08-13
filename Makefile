@@ -20,8 +20,7 @@ list:
 # TODO: NeoBundle,brew等の各種管理ツールのupdateを入れる
 update:
 	git pull origin master
-	git submodule init
-	git submodule update
+	git submodule update --init --recursive
 	git submodule foreach git pull origin master
 #	anyenv update
 #	brew file update

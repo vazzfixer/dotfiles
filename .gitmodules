@@ -22,3 +22,6 @@
 	path = .zsh/cool-peco
 	url = https://github.com/ryoppy/cool-peco
 	ignore = dirty
+[submodule ".zprezto"]
+	path = .zprezto
+	url = https://github.com/kegamin/prezto.git
