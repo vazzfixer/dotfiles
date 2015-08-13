@@ -14,10 +14,6 @@
 	path = .zsh/z
 	url = https://github.com/rupa/z
 	ignore = dirty
-[submodule ".zsh/cool-peco"]
-	path = .zsh/cool-peco
-	url = https://github.com/kegamin/cool-peco
-	ignore = dirty
 [submodule ".zsh/antigen"]
 	path = .zsh/antigen
 	url = https://github.com/zsh-users/antigen.git
