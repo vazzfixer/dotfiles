@@ -13,7 +13,7 @@
 [core]
   #pager = lv -cOu8
   autocrlf = false
-  editor = /usr/bin/vim
+  editor = vi
   excludesfile = ~/.gitignore
 [push]
   # push only the current branch
