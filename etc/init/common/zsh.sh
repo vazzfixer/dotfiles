@@ -15,8 +15,3 @@ if [ "$current_shell" != "$zsh_path" ]; then
   #zshをデフォルトのshellに
   chsh -s $zsh_path
 fi
-
-# zshに関わる各種初期化スクリプトを実行
-if [ -x $DOTPATH/etc/init/linux/script/prezto.sh ]; then
-  $zsh_path $DOTPATH/etc/init/linux/script/prezto.sh
-fi
