@@ -15,6 +15,6 @@ fi
 e_newline
 e_header "NeoBundleInstall"
 
-vi -u $HOME/.vimrc -i NONE -c "try | NeoBundleInstall! | finally | q! | endtry" -e -s -V1
+vim -u $HOME/.vimrc -i NONE -c "try | NeoBundleInstall! | finally | q! | endtry" -e -s -V1
 
 e_done "installed."
