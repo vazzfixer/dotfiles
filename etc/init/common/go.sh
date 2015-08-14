@@ -4,7 +4,12 @@
 
 e_header "install go plugins"
 if has go; then
+  # peco
   go get github.com/peco/peco/cmd/peco
+
+  # vagrant-global-status
+  go get github.com/monochromegane/vagrant-global-status/
+  cd $HOME/go/src/github.com/monochromegane/vagrant-global-status/cmd/vagrant-global-status/ && go install
 else
   e_error "go command doesn't exist. skip installing plugins."
 fi
