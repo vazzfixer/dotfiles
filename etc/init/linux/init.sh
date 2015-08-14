@@ -7,6 +7,7 @@ install_yum_package() {
   sudo yum install -y gcc
   sudo yum install -y tmux
   sudo yum install -y zsh
+  sudo yum install -y vim
   e_success "install yum packages"
 }
 
