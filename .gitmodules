@@ -25,3 +25,6 @@
 	path = .zsh/zaw
 	url = http://github.com/zsh-users/zaw.git
 	ignore = dirty
+[submodule ".vim/bundle/vimproc"]
+	path = .vim/bundle/vimproc
+	url = https://github.com/Shougo/vimproc.vim.git

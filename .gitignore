@@ -4,7 +4,7 @@ TAGS
 *.log
 .vim/bundle/*
 !.vim/bundle/neobundle.vim
-!.vim/bundle/vimproc.vim
+!.vim/bundle/vimproc
 .vim/.netrwhist
 .ruby-version
 .DS_Store
