@@ -24,6 +24,3 @@
 [submodule ".vim/bundle/vimproc"]
 	path = .vim/bundle/vimproc
 	url = https://github.com/Shougo/vimproc.vim.git
-[submodule ".zsh/cool-peco"]
-	path = .zsh/cool-peco
-	url = https://github.com/kegamin/cool-peco.git
