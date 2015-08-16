@@ -22,6 +22,7 @@ update:
 	git pull origin master
 	git submodule update --init --recursive
 	git submodule foreach git pull origin master
+	antigen update
 #	anyenv update
 #	brew file update
 #	vim -u ~/.vimrc -i NONE -c "try | NeoBundleUpdate! | finally | q! | endtry" -e -s -V1
