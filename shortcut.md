@@ -4,12 +4,14 @@
 
 * z hoge<TAB> : ディレクトリ移動
 * prefix ^j
- * ^j : zaw-cdr ディレクトリ移動
- * ^r : zaw-history コマンド履歴
- * ^p : zaw-process プロセスID検索
- * ^t : zaw-tmux tmux指定
- * ^s : zaw-searcher 検索
- * ^g : cool-peco-ghq ghq
+ * ^j : anyframe-widget-cdr ディレクトリ移動
+ * ^r : anyframe-widget-execute-history コマンド履歴
+ * ^g : anyframe-widget-ghq-repository
+ * ^p : zaw-process プロセス管理
+ * ^s : zaw-sercher ディレクトリ内のag検索
+* prefix ^v vagrant関連
+ * ^v : anyframe-widget-vagrant vagrantホストの各種操作
+ * ^j : anyframe-widget-vagrant-cdr vagrantホストのディレクトリに移動
 * prefix ^g : git関連
  * ^s : zaw-git-status
  * ^f : zaw-git-files

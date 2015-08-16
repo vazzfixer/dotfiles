@@ -1,0 +1,18 @@
+# require vagrant
+
+cat << EOL
+ssh             connects to machine via SSH
+ssh-config      outputs OpenSSH valid configuration to connect to the machine
+status          outputs status of the vagrant machine
+up              starts and provisions the vagrant environment
+halt            stops the vagrant machine
+suspend         suspends the machine
+resume          resume a suspended vagrant machine
+reload          restarts vagrant machine, loads new Vagrantfile configuration
+destroy         stops and deletes all traces of the vagrant machine
+EOL
+
+# Local Variables:
+# mode: Shell-Script
+# End:
+# vim: ft=zsh
