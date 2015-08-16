@@ -8,7 +8,7 @@ if has go; then
   go get github.com/peco/peco/cmd/peco
 
   # ttyrecのデータをgif化するツール
-  go get github.com/sugyan/ttygif
+  go get github.com/sugyan/ttyrec2gif
 
   # vagrant-global-status
   go get github.com/monochromegane/vagrant-global-status/
