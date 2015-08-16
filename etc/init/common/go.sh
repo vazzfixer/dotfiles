@@ -7,6 +7,9 @@ if has go; then
   # peco
   go get github.com/peco/peco/cmd/peco
 
+  # ttyrecのデータをgif化するツール
+  go get github.com/sugyan/ttygif
+
   # vagrant-global-status
   go get github.com/monochromegane/vagrant-global-status/
   cd $HOME/go/src/github.com/monochromegane/vagrant-global-status/cmd/vagrant-global-status/ && go install
