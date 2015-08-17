@@ -29,6 +29,11 @@ fi
 
 if type vim > /dev/null 2>&1; then
   e_arrow "update vim plugins"
+  if is_osx ; then
+    make -C $HOME/.vim/bundle/vimproc -f make_mac.mak
+  elif is_linux ; then
+    make -C $HOME/.vim/bundle/vimproc -f make_unix.mak
+  fi
   vim -u $HOME/.vimrc -i NONE -c "try | NeoBundleUpdate! | finally | q! | endtry" -e -s -V1
   e_done "update vim plugins"
 fi
