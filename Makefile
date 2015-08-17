@@ -17,18 +17,8 @@ help:
 list:
 	@$(foreach val, $(DOTFILES_FILES), ls -dF $(val);)
 
-# TODO: NeoBundle,brew等の各種管理ツールのupdateを入れる
 update:
-	git pull origin master
-	git submodule update --init --recursive
-	git submodule foreach git pull origin master
-	antigen update
-#	anyenv update
-#	brew file update
-#	vim -u ~/.vimrc -i NONE -c "try | NeoBundleUpdate! | finally | q! | endtry" -e -s -V1
-#	cabal update
-#	sudo tlmgr update --self
-#	sudo tlmgr update --all
+	@DOTPATH=$(PWD) bash $(PWD)/bin/dotfiles_update
 
 deploy:
 	@echo 'Copyright (c) 2013-2015 BABAROT All Rights Reserved.'
