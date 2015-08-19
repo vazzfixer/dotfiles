@@ -9,6 +9,8 @@ install_yum_package() {
   sudo yum install -y zsh
   sudo yum install -y vim
   sudo yum install -y go
+  sudo yum install -y telnet
+  sudo yum install -y tree
   e_success "install yum packages"
 }
 
