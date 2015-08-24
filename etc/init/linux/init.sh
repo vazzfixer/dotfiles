@@ -4,13 +4,7 @@
 
 install_yum_package() {
   e_header "install yum packages"
-  sudo yum install -y gcc
-  sudo yum install -y tmux
-  sudo yum install -y zsh
-  sudo yum install -y vim
-  sudo yum install -y go
-  sudo yum install -y telnet
-  sudo yum install -y tree
+  sudo yum install -y gcc tmux zsh vim go telnet tree
   e_success "install yum packages"
 }
 
