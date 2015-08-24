@@ -1,5 +1,5 @@
 local command
-command=$(anyframe-source-vagrant-list-commands \
+command=$(anyframe-source-vagrant-list-commands -h \
              | anyframe-selector-auto \
              | awk '{print $1}')
 
